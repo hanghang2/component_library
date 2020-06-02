@@ -19,12 +19,14 @@ const routes = [
 		path: "/Main",
 		name: "Main",
 		component: () => import("../views/Main/index.vue"),
-		children: [{
-			path: "/zzTable",
-			name: "zzTable",
-			component: () => import("../views/Main/table.vue"),
-		}]
-	},
+		children: [
+			{
+				path: "/zzTable",
+				name: "zzTable",
+				component: () => import("../views/Main/table.vue")
+			}
+		]
+	}
 ];
 
 const router = new VueRouter({

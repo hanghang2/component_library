@@ -30,30 +30,36 @@
 	margin: 0 auto;
 	padding: 20px;
 }
+
 .about h3 {
 	margin: 10px 0;
 	margin-top: 30px;
 }
+
 .about p {
 	margin: 10px 0;
 	font-size: 14px;
 }
+
 .about p a {
 	color: #1890ff;
 }
+
 .about .daiam {
 	background: #f5f5f5;
 	padding: 12px 20px;
 	border: 1px solid #eaeefb;
-	font-family: Menlo,Monaco,Consolas,Courier,monospace;
+	font-family: Menlo, Monaco, Consolas, Courier, monospace;
 }
+
 .about .daiam p {
 	font-size: 12px;
 }
+
 .about .txt {
 	padding: 8px 16px;
-    background-color: #ecf8ff;
-    border-radius: 4px;
-    border-left: 5px solid #50bfff;
+	background-color: #ecf8ff;
+	border-radius: 4px;
+	border-left: 5px solid #50bfff;
 }
 </style>
