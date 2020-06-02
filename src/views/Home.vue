@@ -1,18 +1,17 @@
 <template>
 	<div class="home">
 		<p>eslint空格终于可以了啊</p>
-		<HelloWorld msg="Welcome to Your Vue.js App"/>
+
+		<zz-demo></zz-demo>
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
 	name: "Home",
 	components: {
-		HelloWorld
 	},
 	data() {
 		return {
@@ -21,7 +20,7 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scoped>
+<style scoped>
 p {
 	color: #dddddd;
 	font-size: 18px;
