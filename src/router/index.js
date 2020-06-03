@@ -19,9 +19,13 @@ const routes = [
 		path: "/Main",
 		name: "Main",
 		component: () => import("../views/Main/index.vue"),
-		redirect:'/zzTable',
+		redirect:'/zzButton',
 		children: [
 			{
+				path: "/zzButton",
+				name: "zzButton",
+				component: () => import("../views/Main/button.vue")
+			}, {
 				path: "/zzTable",
 				name: "zzTable",
 				component: () => import("../views/Main/table.vue")
@@ -30,7 +34,11 @@ const routes = [
 				path: "/zzTree",
 				name: "zzTree",
 				component: () => import("../views/Main/tree.vue")
-			}
+			}, {
+				path: "/zzInput",
+				name: "zzInput",
+				component: () => import("../views/Main/input.vue")
+			},
 		]
 	}
 ];

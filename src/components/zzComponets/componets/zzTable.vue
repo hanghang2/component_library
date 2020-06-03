@@ -121,7 +121,7 @@ export default {
 table {
 	border-collapse: collapse;
 	border: 1px solid #ebeef5;
-	text-align: left;
+	text-align: center;
 }
 
 .table-cell {
@@ -146,7 +146,15 @@ table {
 	margin: 0px auto;
 	border: 1px solid #ebeef5;
 	outline: none;
-	color: #969399;
+	color: #969399;   
+	height: 30px;
+    padding: 0 10px;
+}
+input:disabled {
+	color: #c0c4cc;
+	cursor: not-allowed;
+	background-color: #f5f7fa;
+    border-color: #e4e7ed;
 }
 
 tr.active {
