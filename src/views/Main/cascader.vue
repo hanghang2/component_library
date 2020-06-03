@@ -69,7 +69,6 @@ export default {
 .Cascader {
 	.list {
 		margin-bottom: 30px;
-
 		p {
 			margin-bottom: 10px;
 		}

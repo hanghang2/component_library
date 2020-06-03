@@ -26,6 +26,9 @@
 			<li class="nav-list">
 				<router-link to="/zzCascader">cascader联级器</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzDatePicker">datePicker日期选择器</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>数据</a>

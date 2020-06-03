@@ -3,12 +3,13 @@
 		<div class="home-banner">
 			<div>
 				<h1>zzComponent</h1>
-				<button class="button-primary">
-					<router-link to="/Main">开始使用</router-link>
-				</button>
-				<button class="button-clean">
-					<router-link to="/About">查看文档</router-link>
-				</button>
+				<router-link to="/Main">
+					<button class="button-primary">开始使用</button>
+				</router-link>
+
+				<router-link to="/About">
+					<button class="button-clean">查看文档</button>
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -16,7 +17,7 @@
 <style scoped>
 .HomePage .home-banner {
 	height: 400px;
-	background: url('../../assets/bg1.jpg');
+	background: url("../../assets/bg1.jpg");
 	background-size: 100% 100%;
 	display: flex;
 	justify-content: center; /* 水平居中 */
@@ -63,6 +64,6 @@
 }
 
 .HomePage .home-banner button:hover {
-	opacity: .7;
+	opacity: 0.7;
 }
 </style>

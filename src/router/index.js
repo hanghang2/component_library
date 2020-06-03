@@ -50,6 +50,10 @@ const routes = [
 				path: "/zzCascader",
 				name: "zzCascader",
 				component: () => import("../views/Main/cascader.vue")
+			},{
+				path: "/zzDatePicker",
+				name: "zzDatePicker",
+				component: () => import("../views/Main/datePicker.vue")
 			},
 		]
 	}
