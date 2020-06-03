@@ -25,6 +25,11 @@ const routes = [
 				path: "/zzTable",
 				name: "zzTable",
 				component: () => import("../views/Main/table.vue")
+			},
+			{
+				path: "/zzTree",
+				name: "zzTree",
+				component: () => import("../views/Main/tree.vue")
 			}
 		]
 	}

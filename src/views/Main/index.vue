@@ -7,6 +7,9 @@
 			<li class="nav-list">
 				<router-link to="/zzTable">table表格</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzTree">tree树</router-link>
+			</li>
 		</div>
 		<div class="main_body">
 			<router-view></router-view>
@@ -17,3 +20,8 @@
 <script>
 export default {};
 </script>
+<style>
+.main_body{
+	text-align: left;
+}
+</style>

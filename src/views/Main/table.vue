@@ -17,7 +17,7 @@
 <script>
 
 export default {
-	name: "Index4",
+	name: "Table",
 	data() {
 		return {
 			checkedArr: [],
