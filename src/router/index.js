@@ -19,6 +19,7 @@ const routes = [
 		path: "/Main",
 		name: "Main",
 		component: () => import("../views/Main/index.vue"),
+		redirect:'/zzTable',
 		children: [
 			{
 				path: "/zzTable",
