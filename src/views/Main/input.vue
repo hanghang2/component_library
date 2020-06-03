@@ -26,7 +26,7 @@ export default {
 </script>
 <style scoped>
 .input .list {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 
 }
 

@@ -31,11 +31,11 @@ export default {
 <style scoped>
 .header {
 	height: 70px;
-	width: 1200px;
-	margin: 0 auto;
+	padding: 0 40px;
 	display: flex;
 	flex-flow: nowrap;
 	border-bottom: 1px solid #dcdfe6;
+	box-shadow: 0 2px 8px #f0f1f2;
 }
 
 .logo {

@@ -68,10 +68,9 @@ let treeData = [
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .Tree {
-	background: #ffffff;
 	height: 100%;
 	h3{
-		font-size: 18px;
+		font-size: 14px;
 		font-weight: normal;
 		margin: 10px 0;
 	}
