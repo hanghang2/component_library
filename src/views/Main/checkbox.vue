@@ -30,7 +30,7 @@ export default {
 	background: #ffffff;
 	height: 100%;
 	h3{
-		font-size: 18px;
+		font-size: 14px;
 		font-weight: normal;
 		margin: 10px 0;
 	}
@@ -41,7 +41,6 @@ export default {
 	}
 	p.info{
 		padding: 50px 0 0 0;
-		font-size: 16px;
 		color: #666666;
 	}
 }

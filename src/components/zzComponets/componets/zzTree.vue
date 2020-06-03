@@ -49,9 +49,3 @@ export default {
 	}
 };
 </script>
-<style>
-.zzTree {
-
-}
-
-</style>
