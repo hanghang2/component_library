@@ -108,11 +108,13 @@ export default {
 		let _this = this;
 		document.addEventListener("click", function(e) {
 			try {
-				if (!!_this.$refs.cascader.contains(e.target)) return;
+				if (_this.$refs.cascader.contains(e.target)) return;
 				_this.isFocus = false;
  				_this.isShowLast = false;
  				_this.isShowSun = false;
-			} catch (e) {}
+			} catch (e) {
+				console.log(e)
+			}
 		});
 	},
 	created: function() {
