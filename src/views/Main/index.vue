@@ -23,6 +23,9 @@
 			<li class="nav-list">
 				<router-link to="/checkbox">checkbox多选框</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzCascader">cascader联级器</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>数据</a>

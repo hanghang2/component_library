@@ -46,6 +46,10 @@ const routes = [
 				path: "/checkbox",
 				name: "checkbox",
 				component: () => import("../views/Main/checkbox.vue")
+			},{
+				path: "/zzCascader",
+				name: "zzCascader",
+				component: () => import("../views/Main/cascader.vue")
 			},
 		]
 	}

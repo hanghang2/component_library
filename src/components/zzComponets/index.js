@@ -5,6 +5,7 @@ import zzButton from "./componets/zzButton";
 import zzInput from "./componets/zzInput";
 import zzSelect from "./componets/zzSelect";
 import zzCheckbox from "./componets/zzCheckbox";
+import zzCascader from "./componets/zzCascader";
 
 //导出单个组件
 export {
@@ -20,6 +21,7 @@ export default {
 		Vue.component("zzInput", zzInput);
 		Vue.component("zzSelect", zzSelect);
 		Vue.component("zzCheckbox", zzCheckbox);
+		Vue.component("zzCascader", zzCascader);
 	}
 };
 

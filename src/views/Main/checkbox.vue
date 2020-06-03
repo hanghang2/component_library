@@ -36,7 +36,6 @@ export default {
 	}
 	p.info{
 		padding: 50px 0 0 0;
-		font-size: 16px;
 		color: #666666;
 	}
 }
