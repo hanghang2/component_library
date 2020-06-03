@@ -16,8 +16,8 @@ module.exports = {
         "indent": ["error","tab"],
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-        'indent': 'off',
-        'no-unused-vars': 'off',
+        // 'indent': 'off',
+        // 'no-unused-vars': 'off',
         "no-empty": 0,//是否允许空的表达式，if (foo) {}
         "no-extra-boolean-cast": 0,//在条件语句中不允许使用!!  比如 if (!!foo) {   } 
     },
