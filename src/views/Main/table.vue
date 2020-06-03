@@ -3,12 +3,11 @@
 		<div style="width: 800px;margin: 20px;">
 			<zz-table :checkedArr="checkedArr" :tableData="tableData" :tableheader="tableheader">
 				<template slot="toolbar" slot-scope="scope">
-					<button class="zbtn" @click="view(scope.row,scope.i)" type="text" size="small">查看</button>
-					<button class="zbtn" @click="edit(scope.row,scope.i,scope.editshow)" type="text" size="small">编辑
-					</button>
+					<zz-button class="zbtn" @click.native="view(scope.row,scope.i)">查看</zz-button>
+					<zz-button class="zbtn" @click.native="edit(scope.row,scope.i,scope.editshow)">编辑</zz-button>
 				</template>
 			</zz-table>
-			<button @click="getCheck">选中提交</button>
+            <zz-button type="primary" @click.native="getCheck">选中提交</zz-button>
 		</div>
 
 	</div>
@@ -80,7 +79,7 @@ let tableheader = [
 			edit: false
 		}, {
 			name: "操作",
-			width: 200,
+			width: 150,
 			fixed: "right",
 			slot: "toolbar"
 		}
@@ -151,6 +150,13 @@ let tableheader = [
 .Table {
 	background: #ffffff;
 	height: 100%;
+}
+.zbtn {
+	border: none;
+	padding: 5px;
+}
+.zbtn:hover {
+	background: none;
 }
 
 </style>

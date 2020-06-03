@@ -4,6 +4,23 @@
 			<li class="nav-list nav-first">
 				<a>组件</a>
 			</li>
+			<li class="nav-list nav-basic">
+				<a>通用</a>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzButton">button按钮</router-link>
+			</li>
+			
+			<li class="nav-list nav-basic">
+				<a>Form表单</a>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzInput">input输入框</router-link>
+			</li>
+
+			<li class="nav-list nav-basic">
+				<a>数据</a>
+			</li>
 			<li class="nav-list">
 				<router-link to="/zzTable">table表格</router-link>
 			</li>
@@ -13,7 +30,3 @@
 		</div>
 	</div>
 </template>
-
-<script>
-export default {};
-</script>

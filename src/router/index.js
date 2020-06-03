@@ -19,13 +19,20 @@ const routes = [
 		path: "/Main",
 		name: "Main",
 		component: () => import("../views/Main/index.vue"),
-		redirect:'/zzTable',
-		children: [
-			{
+		redirect:'/zzButton',
+		children: [{
+				path: "/zzButton",
+				name: "zzButton",
+				component: () => import("../views/Main/button.vue")
+			}, {
 				path: "/zzTable",
 				name: "zzTable",
 				component: () => import("../views/Main/table.vue")
-			}
+			}, {
+				path: "/zzInput",
+				name: "zzInput",
+				component: () => import("../views/Main/input.vue")
+			},
 		]
 	}
 ];

@@ -30,10 +30,11 @@ li {
 #app #nav {
     height: 100%;
     width: 100%;
-	display: flex;
+	display: flex;padding: 40px 0 0;
 }
 #nav .main_left {
-	flex: 0 0 240px;
+    flex: 0 0 20%;
+    border-right: 1px solid #f3f3f3;
 }
 #nav .main_left .nav-list a { 
     display: block;
@@ -43,14 +44,42 @@ li {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-bottom: 8px;
 }
 #nav .main_left .nav-list.nav-first a {
     font-weight: 600;
-    font-size: 16px;
     margin: 10px 0;
+}
+#nav .main_left .nav-list.nav-first a:hover {
+    color: #333 !important;
+}
+#nav .main_left .nav-list a {
+	text-align: left;
+	padding-left: 40px;
+}
+#nav .main_left .nav-list a:hover {
+	color: #1890ff;
+	transition: transform .15s cubic-bezier(.645,.045,.355,1),opacity .15s cubic-bezier(.645,.045,.355,1),-webkit-transform .15s cubic-bezier(.645,.045,.355,1);
+}
+#nav .main_left .nav-list .router-link-active {
+	color: #1890ff;
+	background-color: #eaf8ff;
+	border-right: 3px solid #1890ff;
+	transition: transform .15s cubic-bezier(.645,.045,.355,1),opacity .15s cubic-bezier(.645,.045,.355,1),-webkit-transform .15s cubic-bezier(.645,.045,.355,1);
+}
+#nav .main_left .nav-list.nav-basic {
+	padding: 0 40px;
+}
+#nav .main_left .nav-list.nav-basic a {
+    color: rgba(0,0,0,.45);
+    font-size: 12px;
+    border-bottom: 1px solid #f2f2f2;
+    padding-left: 0;
 }
 #app .main_body {
     height: 100%;
     flex: 1;
-    padding: 20px;
+    padding: 20px 60px;
+    text-align: left;
+    font-size: 14px;
 }
