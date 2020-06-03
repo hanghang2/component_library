@@ -24,10 +24,16 @@ export default {
 			indeterminate2:false
 		}
 	},
+	watch:{
+		indeterminate(newVal){
+			if(newVal) this.indeterminate2 = true;
+		}
+	},
 	methods: {
 		change() {
 			if (this.getDisable()) return;
 			if(this.indeterminate2) this.indeterminate2 = false;
+			this.$emit('change', !this.value)
 			this.$emit("input", !this.value);
 		},
 		getDisable() {

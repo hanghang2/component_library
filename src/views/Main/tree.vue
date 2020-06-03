@@ -4,6 +4,11 @@
 		<div class="Tree-item1">
 			<zz-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></zz-tree>
 		</div>
+		<h3>可选择</h3>
+		<div class="Tree-item2">
+			<zz-tree ref="zztree" :data="data" :props="defaultProps" @node-click="handleNodeClick" show-checkbox></zz-tree>
+			<zz-button @click.native="getZztreeVal">获取选中节点值</zz-button>
+		</div>
 	</div>
 </template>
 
@@ -23,6 +28,9 @@ export default {
 	methods: {
 		handleNodeClick(data){
 			console.log(data)
+		},
+		getZztreeVal(){
+			console.log(this.$refs.zztree.getChecked())
 		}
 	}
 };
@@ -75,10 +83,11 @@ let treeData = [
 		font-weight: normal;
 		margin: 10px 0;
 	}
-	.Tree-item1{
+	.Tree-item1,.Tree-item2{
 		border: 1px solid #dddddd;
 		padding: 15px 20px;
 		border-radius: 5px;
+		margin-bottom: 30px;
 	}
 }
 

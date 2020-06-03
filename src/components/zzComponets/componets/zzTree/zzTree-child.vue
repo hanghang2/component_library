@@ -2,6 +2,7 @@
 	<div class="zzTree-child">
 		<div class="zzTree-child-label" @click="childrenShow = !childrenShow">
 			<span class="zzTree-child-label-icon" :class="classFilter(treeItem)"></span>
+			<zzCheckbox v-if="showCheckbox" v-model="checkbox" @change="checkboxChange" :indeterminate="indeterminate" @click.native.stop=""></zzCheckbox>
 			<span>{{treeItem[props.label]}}</span>
 		</div>
 		<transition name="fade">
@@ -12,11 +13,12 @@
 	</div>
 </template>
 <script>
+import zzCheckbox from '../zzCheckbox';
 import zzTreeChild from "./zzTree-child";
 export default {
 	name:'zzTreeChild',
-	components: { zzTreeChild },
-	inject: ['props'],
+	components: { zzTreeChild , zzCheckbox},
+	inject: ['props','showCheckbox'],
 	props: {
 		treeItem: {
 			type: Object,
@@ -25,10 +27,46 @@ export default {
 	},
 	data(){
 		return {
-			childrenShow:false
+			childrenShow:false,
+			checkbox:false,
+			indeterminate:false
+		}
+	},
+	watch:{
+		checkbox(newVal){
+			//子选中状态修改
+			this.$children.map((item)=>{
+				if(item.$options.name == 'zzTreeChild') item.checkbox = newVal;
+				return item;
+			})
+			//父选中状态修改
+			let setParent = (parent)=>{
+				if(parent.$options.name == 'zzTreeChild'){
+					let checkboxArr = [];
+					parent.$children.map((item)=>{
+						if(item.$options.name == 'zzTreeChild') checkboxArr.push(item.checkbox);
+						return item;
+					})
+					if(checkboxArr.indexOf(false) === -1){
+						parent.indeterminate = false;
+						parent.checkbox = true;
+					}else if(checkboxArr.indexOf(true) === -1){
+						parent.indeterminate = false;
+						parent.checkbox = false;
+					}else{
+						parent.indeterminate = true;
+					}
+					if(parent.$parent && parent.$parent.$options.name == 'zzTreeChild'){
+						setParent(parent.$parent);
+					}
+				}
+			}
+			setParent(this.$parent);
 		}
 	},
 	methods:{
+		checkboxChange(){//checkbox切换
+		},
 		classFilter(item){
 			if(item[this.props.children] && item[this.props.children].length){
 				return this.childrenShow ? 'open' : 'close';

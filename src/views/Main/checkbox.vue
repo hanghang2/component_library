@@ -3,7 +3,7 @@
 		<h3>基础用法</h3>
 		<div class="checkbox-item1">
 			<zz-checkbox v-model="checked" disabled style="margin-right: 20px;">备选项</zz-checkbox>
-			<zz-checkbox v-model="checked2" style="margin-right: 20px;">备选项</zz-checkbox>
+			<zz-checkbox v-model="checked2" style="margin-right: 20px;" @change="changeChecked2">备选项</zz-checkbox>
 			<zz-checkbox v-model="checked3" :indeterminate="true">备选项</zz-checkbox>
 			<p class="info">设置 disabled 属性，设置 indeterminate 为true显示不确定状态</p>
 		</div>
@@ -16,6 +16,11 @@ export default {
 			checked:true,
 			checked2:false,
 			checked3:false
+		}
+	},
+	methods:{
+		changeChecked2(val){
+			console.log(val)
 		}
 	}
 }

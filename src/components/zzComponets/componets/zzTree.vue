@@ -7,7 +7,7 @@
 import zzTreeChild from "./zzTree/zzTree-child";
 
 export default {
-	name:'zzTree',
+	name: "zzTree",
 	components: { zzTreeChild },
 	props: {
 		data: {
@@ -16,18 +16,36 @@ export default {
 		},
 		props: {
 			type: Object,
-			default: () => (
-				{
-					children: "children",
-					label: "label"
-				}
-			)
-		}
+			default: () => ({
+				children: "children",
+				label: "label"
+			})
+		},
+		showCheckbox: {}
 	},
 	provide() {//数据共享给子组件
 		return {
-			props:this.props
+			props: this.props,
+			showCheckbox: this.showCheckbox === "" || this.showCheckbox
+		};
+	},
+	methods: {
+		getChecked() {
+			let checkedArr = [];
+			let getChildrenChecked = (children)=>{
+				children.map((item)=>{
+					if(item.$options.name == 'zzTreeChild'){
+						if(item.checkbox) checkedArr.push(item.treeItem);
+						if(item.$children) getChildrenChecked(item.$children);
+					}
+					return item;
+				})
+			}
+			getChildrenChecked(this.$children);
+			return checkedArr;
 		}
+	},
+	created() {
 	}
 };
 </script>
