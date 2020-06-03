@@ -55,10 +55,6 @@ export default {
 .zzTree-child-label span{
 	vertical-align: middle;
 }
-.zzTree-child-list{
-	padding-left: 18px;
-	opacity: 1;
-}
 .zzTree-child-label-icon{
 	display: inline-block;
 	width: 0;
@@ -82,11 +78,17 @@ export default {
 	transform: rotate(-90deg);
 }
 
+.zzTree-child-list{
+	padding-left: 18px;
+	overflow: hidden;
+}
 .fade-leave-active,.fade-enter-active {
-	transition: all 0.1s linear;
+	transition: max-height 0.5s;
 }
 .fade-enter,.fade-leave-to {
-	opacity: 0;
+	max-height:0 ;
 }
-
+.fade-enter-to,.fade-leave {
+	max-height: 400px ;
+}
 </style>

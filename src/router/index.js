@@ -38,6 +38,10 @@ const routes = [
 				path: "/zzInput",
 				name: "zzInput",
 				component: () => import("../views/Main/input.vue")
+			},{
+				path: "/checkbox",
+				name: "checkbox",
+				component: () => import("../views/Main/checkbox.vue")
 			},
 		]
 	}

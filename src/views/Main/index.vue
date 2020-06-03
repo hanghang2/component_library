@@ -17,6 +17,9 @@
 			<li class="nav-list">
 				<router-link to="/zzInput">input输入框</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/checkbox">checkbox多选框</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>数据</a>
