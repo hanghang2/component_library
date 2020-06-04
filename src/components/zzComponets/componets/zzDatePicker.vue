@@ -390,21 +390,21 @@ export default {
 	width: 100%;
 	padding-left: 30px;
 	cursor: pointer;
-	.zl-DatePicker .zlInput .zl-input__inner:hover {
-		border: 1px solid #c0c4cc;
-	}
-	.zl-DatePicker .zlInput .zl-input__inner.isfocus {
-		border-color: #0170fe !important;
-	}
+}
+.zl-DatePicker .zlInput .zl-input__inner:hover {
+	border: 1px solid #c0c4cc;
+}
+.zl-DatePicker .zlInput .zl-input__inner.isfocus {
+	border-color: #0170fe !important;
 }
 .zl-DatePicker .zlInput input:disabled {
 	background-color: #f5f7fa;
 	border-color: #e4e7ed;
 	color: #c0c4cc;
 	cursor: not-allowed;
-	&:hover {
-		border: 1px solid #e4e7ed;
-	}
+}
+.zl-DatePicker .zlInput input:disabled:hover {
+	border: 1px solid #e4e7ed;
 }
 .zl-DatePicker .zlInput .zl-input_isclearable {
 	position: absolute;
