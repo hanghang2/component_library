@@ -12,10 +12,10 @@
 				@click="isFocus = !isFocus"
 			/>
 			<span class="zl-DatePicker_icon">
-				<i class="el-icon-date"></i>
+				<img class="zl-input__clear" src="@/assets/dateIcon.png" />
 			</span>
 			<span @click="clear" class="zl-input_isclearable">
-				<i class="el-icon-circle-close zl-input__clear"></i>
+				<img class="zl-input__clear" src="@/assets/clearable.png" />
 			</span>
 		</div>
 
@@ -158,7 +158,7 @@
 
 <script>
 export default {
-	props: ['value','placeholder'],
+	props: ["value", "placeholder"],
 	data() {
 		return {
 			inputVal: "",
@@ -200,7 +200,7 @@ export default {
 			this.isFocus = !this.isFocus;
 		},
 		activeDay(item, i, j) {
-			console.log(i,j)
+			console.log(i, j);
 			if (item.type == "prevMonth") {
 				this.prevMonth();
 			}
@@ -210,8 +210,18 @@ export default {
 			this.activeYear = this.year;
 			this.activeMonth = this.month;
 			this.activeDays = item.day;
-			this.active = this.activeYear + "-" + this.activeMonth + "-" + this.activeDays;
-			this.inputVal = this.activeYear + "-" + this.activeMonth + "-" + this.activeDays;
+			this.active =
+				this.activeYear +
+				"-" +
+				this.activeMonth +
+				"-" +
+				this.activeDays;
+			this.inputVal =
+				this.activeYear +
+				"-" +
+				this.activeMonth +
+				"-" +
+				this.activeDays;
 			this.changes();
 		},
 		setMonth(month) {
@@ -358,178 +368,176 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.zl-DatePicker {
-	.zlInput {
-		width: 240px;
-		position: relative;
-		.zl-input__inner {
-			background-color: #fff;
-			background-image: none;
-			border-radius: 4px;
-			border: 1px solid #dcdfe6;
-			box-sizing: border-box;
-			color: #606266;
-			display: inline-block;
-			font-size: inherit;
-			height: 40px;
-			line-height: 40px;
-			outline: none;
-			padding: 0 15px;
-			transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-			width: 100%;
-			padding-left: 30px;
-			cursor: pointer;
-			&:hover {
-				border: 1px solid #c0c4cc;
-			}
-			&.isfocus {
-				border-color: #0170fe !important;
-			}
-		}
-		input:disabled {
-			background-color: #f5f7fa;
-			border-color: #e4e7ed;
-			color: #c0c4cc;
-			cursor: not-allowed;
-			&:hover {
-				border: 1px solid #e4e7ed;
-			}
-		}
-		.zl-input_isclearable {
-			position: absolute;
-			width: 25px;
-			height: 100%;
-			right: 5px;
-			top: 0;
-			text-align: center;
-			color: #c0c4cc;
-			transition: all 0.3s;
-			z-index: 111;
-		}
-		.zl-input__clear {
-			color: #c0c4cc;
-			font-size: 14px;
-			cursor: pointer;
-			transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-			width: 25px;
-			line-height: 40px;
-		}
-		.zl-DatePicker_icon {
-			position: absolute;
-			left: 5px;
-			width: 25px;
-			height: 100%;
-			top: 0;
-			text-align: center;
-			color: #c0c4cc;
-			transition: all 0.3s;
-			i {
-				color: #c0c4cc;
-				font-size: 14px;
-				cursor: pointer;
-				transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-				width: 25px;
-				line-height: 40px;
-			}
-		}
+<style scoped>
+.zl-DatePicker .zlInput {
+	width: 240px;
+	position: relative;
+}
+.zl-DatePicker .zlInput .zl-input__inner {
+	background-color: #fff;
+	background-image: none;
+	border-radius: 4px;
+	border: 1px solid #dcdfe6;
+	box-sizing: border-box;
+	color: #606266;
+	display: inline-block;
+	font-size: inherit;
+	height: 40px;
+	line-height: 40px;
+	outline: none;
+	padding: 0 15px;
+	transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+	width: 100%;
+	padding-left: 30px;
+	cursor: pointer;
+	.zl-DatePicker .zlInput .zl-input__inner:hover {
+		border: 1px solid #c0c4cc;
 	}
-	.zl-calendar {
-		width: 324px;
-		height: 344px;
-		color: #606266;
-		border: 1px solid #ccc;
-		box-shadow: 2px 2px 10px 1px #eaeaea;
-		background: #fff;
-		border-radius: 4px;
-		line-height: 30px;
-		margin-top: 12px;
-		position: absolute;
-		z-index: 111;
-		&::before {
-			content: "";
-			border-left: 1px solid #ccc;
-			border-top: 1px solid #ccc;
-			background: #fff;
-			width: 12px;
-			height: 12px;
-			display: block;
-			transform-origin: 50% 50%;
-			transform: rotate(45deg);
-			margin: -7px 20% 0;
-		}
-		.calendar-head {
-			height: 54px;
-			padding: 12px;
-			text-align: center;
-			font-size: 16px;
-			box-sizing: border-box;
-		}
-		.calendar-head button {
-			border: none;
-			background: none;
-			padding: 0px 6px;
-			outline: none;
-			cursor: pointer;
-			height: 30px;
-		}
-		.calendar-head span {
-			cursor: pointer;
-		}
-		.calendar-head button:hover,
-		.calendar-head span:hover {
-			color: #0170fe;
-		}
-		.prightYear,
-		.prightMonth {
-			float: right;
-		}
-		.pLeftMonth,
-		.pLeftYear {
-			float: left;
-		}
-		.calendar-item {
-			height: 287px;
-			padding: 15px;
-			box-sizing: border-box;
-		}
-		.zl-date-table {
-			width: 100%;
-			text-align: center;
-			height: 100%;
-		}
-		.today {
-			color: #0170fe;
-			font-weight: bold;
-		}
-		.prev-month,
-		.next-month {
-			cursor: pointer;
-			color: #c0c4cc;
-		}
-		.available {
-			cursor: pointer;
-		}
-		.available.active span {
-			color: #fff;
-			background-color: #0170fe;
-			border-radius: 50%;
-			display: block;
-			width: 30px;
-			margin: 0px auto;
-		}
-		.zl-date-table__row td > div {
-			width: 41px;
-		}
-		.bottomBorder th {
-			border-bottom: 1px solid #ebeef5;
-		}
-		.zl-month-table td > div {
-			cursor: pointer;
-		}
-		.zl-month-table td > div:hover {
-			color: #0170fe;
-		}
+	.zl-DatePicker .zlInput .zl-input__inner.isfocus {
+		border-color: #0170fe !important;
 	}
+}
+.zl-DatePicker .zlInput input:disabled {
+	background-color: #f5f7fa;
+	border-color: #e4e7ed;
+	color: #c0c4cc;
+	cursor: not-allowed;
+	&:hover {
+		border: 1px solid #e4e7ed;
+	}
+}
+.zl-DatePicker .zlInput .zl-input_isclearable {
+	position: absolute;
+	width: 25px;
+	height: 100%;
+	right: 5px;
+	top: 0;
+	text-align: center;
+	color: #c0c4cc;
+	transition: all 0.3s;
+	z-index: 111;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.zl-DatePicker .zlInput .zl-input__clear {
+	cursor: pointer;
+	transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+	width: 14px;
+}
+.zl-DatePicker .zlInput .zl-DatePicker_icon {
+	position: absolute;
+	left: 5px;
+	width: 25px;
+	height: 100%;
+	top: 0;
+	text-align: center;
+	color: #c0c4cc;
+	transition: all 0.3s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.zl-DatePicker .zlInput .zl-DatePicker_icon img {
+	cursor: pointer;
+	transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+	width: 14px;
+}
+.zl-DatePicker .zl-calendar {
+	width: 324px;
+	height: 344px;
+	color: #606266;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 10px 1px #eaeaea;
+	background: #fff;
+	border-radius: 4px;
+	line-height: 30px;
+	margin-top: 12px;
+	position: absolute;
+	z-index: 111;
+}
+.zl-DatePicker .zl-calendar::before {
+	content: "";
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	background: #fff;
+	width: 12px;
+	height: 12px;
+	display: block;
+	transform-origin: 50% 50%;
+	transform: rotate(45deg);
+	margin: -7px 20% 0;
+}
+.zl-DatePicker .zl-calendar .calendar-head {
+	height: 54px;
+	padding: 12px;
+	text-align: center;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+.zl-DatePicker .zl-calendar .calendar-head button {
+	border: none;
+	background: none;
+	padding: 0px 6px;
+	outline: none;
+	cursor: pointer;
+	height: 30px;
+}
+.zl-DatePicker .zl-calendar .calendar-head span {
+	cursor: pointer;
+}
+.zl-DatePicker .zl-calendar .calendar-head button:hover,
+.zl-DatePicker .zl-calendar .calendar-head span:hover {
+	color: #0170fe;
+}
+.zl-DatePicker .zl-calendar .prightYear,
+.zl-DatePicker .zl-calendar .prightMonth {
+	float: right;
+}
+.zl-DatePicker .zl-calendar .pLeftMonth,
+.zl-DatePicker .zl-calendar .pLeftYear {
+	float: left;
+}
+.zl-DatePicker .zl-calendar .calendar-item {
+	height: 287px;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.zl-DatePicker .zl-calendar .zl-date-table {
+	width: 100%;
+	text-align: center;
+	height: 100%;
+}
+.zl-DatePicker .zl-calendar .today {
+	color: #0170fe;
+	font-weight: bold;
+}
+.zl-DatePicker .zl-calendar .prev-month,
+.zl-DatePicker .zl-calendar .next-month {
+	cursor: pointer;
+	color: #c0c4cc;
+}
+.zl-DatePicker .zl-calendar .available {
+	cursor: pointer;
+}
+.zl-DatePicker .zl-calendar .available.active span {
+	color: #fff;
+	background-color: #0170fe;
+	border-radius: 50%;
+	display: block;
+	width: 30px;
+	margin: 0px auto;
+}
+.zl-DatePicker .zl-calendar .zl-date-table__row td > div {
+	width: 41px;
+}
+.zl-DatePicker .zl-calendar .bottomBorder th {
+	border-bottom: 1px solid #ebeef5;
+}
+.zl-DatePicker .zl-calendar .zl-month-table td > div {
+	cursor: pointer;
+}
+.zl-DatePicker .zl-calendar .zl-month-table td > div:hover {
+	color: #0170fe;
 }
 </style>
