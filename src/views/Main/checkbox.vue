@@ -11,35 +11,39 @@
 </template>
 <script>
 export default {
-	data(){
+	data() {
 		return {
-			checked:true,
-			checked2:false,
-			checked3:false
-		}
+			checked: true,
+			checked2: false,
+			checked3: false
+		};
 	},
-	methods:{
-		changeChecked2(val){
-			console.log(val)
+	methods: {
+		changeChecked2(val) {
+			console.log(val);
 		}
 	}
-}
+};
 </script>
 <style scoped lang="scss">
 .checkbox {
 	background: #ffffff;
 	height: 100%;
-	h3{
+	h3 {
 		font-size: 14px;
 		font-weight: normal;
 		margin: 10px 0;
 	}
-	.checkbox-item1{
+	.checkbox-item1 {
 		border: 1px solid #dddddd;
 		padding: 15px 20px;
 		border-radius: 5px;
+		&:hover {
+			transition: all 0.5s;
+			box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
+		}
 	}
-	p.info{
+	p.info {
 		padding: 50px 0 0 0;
 		color: #666666;
 	}

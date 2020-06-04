@@ -1,18 +1,18 @@
 <template>
 	<div class="tabs">
-        <div class="list">
+		<div class="list">
 			<p>基础用法</p>
-		    <zz-tabs :tabsData="tabsData"></zz-tabs>
+			<zz-tabs :tabsData="tabsData"></zz-tabs>
 		</div>
-        <br>
-        <div class="list">
+		<br />
+		<div class="list">
 			<p>card</p>
-		    <zz-tabs :tabsData="tabsData" type="card" tabsClose="true"></zz-tabs>
+			<zz-tabs :tabsData="tabsData" type="card" tabsClose="true"></zz-tabs>
 		</div>
-        <br>
-        <div class="list">
+		<br />
+		<div class="list">
 			<p>border-card</p>
-		    <zz-tabs :tabsData="tabsData" type="border-card" tabsClose="true"></zz-tabs>
+			<zz-tabs :tabsData="tabsData" type="border-card" tabsClose="true"></zz-tabs>
 		</div>
 	</div>
 </template>
@@ -29,7 +29,10 @@ export default {
 <style scoped>
 .tabs .list {
 	margin-bottom: 30px;
-
+}
+.tabs .list:hover {
+	transition: all 0.5s;
+	box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
 }
 
 .tabs .list p {
