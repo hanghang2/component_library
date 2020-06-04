@@ -129,7 +129,7 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-thumb {
 	width: 18px;
 	height: 18px;
-	border: 2px solid #409eff;
+	border: 2px solid #0170fe;
 	background-color: #fff;
 	border-radius: 50%;
 	transition: 0.2s;
@@ -145,7 +145,7 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 .div1 {
 	height: 6px;
 	border-radius: 30px;
-	background: #409eff;
+	background: #0170fe;
 	position: absolute;
 	top: 4px;
 	left: 0;

@@ -39,10 +39,10 @@ export default {
 .Slider {
 	.list {
 		margin-top: 20px;
-		height: 70px;
+		height: 100px;
 		border: 1px solid #dddddd;
 		border-radius: 5px;
-		padding: 20px;
+		padding: 50px 20px 20px 20px;
 		span {
 			float: left;
 			width: 100px;
