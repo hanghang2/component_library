@@ -44,8 +44,6 @@ export default {
 			getChildrenChecked(this.$children);
 			return checkedArr;
 		}
-	},
-	created() {
 	}
 };
 </script>

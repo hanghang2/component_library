@@ -2,7 +2,7 @@
 	<button type="button" :class="'zlButton ' + buttonType
         + isplain
         + isround
-        + isdisabled">
+        + getDisabled()">
 		<slot></slot>
 	</button>
 </template>
@@ -19,6 +19,16 @@ export default {
 			isdisabled: '',
 		};
 	},
+	methods:{
+		getDisabled(){
+			if (this.disabled === "" || this.disabled) {
+				this.isdisabled = "zlButton-isdisabled ";
+			} else {
+				this.isdisabled = " ";
+			}
+			return this.isdisabled;
+		}
+	},
 	mounted() {
 		if (!this.type) {
 			this.buttonType = " ";
@@ -34,11 +44,6 @@ export default {
 			this.isround = "zlButton-isround ";
 		} else {
 			this.isround = " ";
-		}
-		if (this.disabled == "") {
-			this.isdisabled = "zlButton-isdisabled ";
-		} else {
-			this.isdisabled = " ";
 		}
 	}
 };

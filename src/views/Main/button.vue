@@ -8,7 +8,7 @@
             <zz-button type="success">成功按钮</zz-button>
             <zz-button type="info">信息按钮</zz-button>
             <zz-button type="warning">警告按钮</zz-button>
-            <zz-button type="danger">危险按钮</zz-button> 
+            <zz-button type="danger">危险按钮</zz-button>
             <br>
             <br>
             <zz-button plain>朴素按钮</zz-button>
@@ -42,7 +42,7 @@
             <zz-button type="success" disabled plain>成功按钮</zz-button>
             <zz-button type="info" disabled plain>信息按钮</zz-button>
             <zz-button type="warning" disabled plain>警告按钮</zz-button>
-            <zz-button type="danger" disabled plain>危险按钮</zz-button>
+            <zz-button type="danger" :disabled="true" plain>危险按钮</zz-button>
         </div>
     </div>
 </template>

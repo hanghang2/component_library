@@ -26,13 +26,13 @@ export default {
 	},
 	watch:{
 		indeterminate(newVal){
-			if(newVal) this.indeterminate2 = true;
+			if(newVal) this.indeterminate2 = true; //检测到设置不确定状态 更改为不确定状态
 		}
 	},
 	methods: {
 		change() {
 			if (this.getDisable()) return;
-			if(this.indeterminate2) this.indeterminate2 = false;
+			if(this.indeterminate2) this.indeterminate2 = false;//手动触发把不确定状态取消
 			this.$emit('change', !this.value)
 			this.$emit("input", !this.value);
 		},

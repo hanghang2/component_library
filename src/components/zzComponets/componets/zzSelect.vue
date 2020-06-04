@@ -15,15 +15,14 @@
 		<span v-show="isFocus" class="zl-select_icon">
             <img class="zl-input__clear" src="@/assets/jiantouUp.png"/>
         </span>
-		<!-- <span v-show="clearable !== false" @click="clear" class="zl-input_isclearable">
-            <img class="zl-input__clear" src="@/assets/clearable.png"/>
-        </span> -->
+		<!--<span v-show="clearable !== false" @click="clear" class="zl-input_isclearable">-->
+            <!--<img class="zl-input__clear" src="@/assets/clearable.png"/>-->
+        <!--</span>-->
 		<div class="lis" v-show="isFocus">
 			<li
 					v-for="(data,index) in selectData"
 					:key="index"
-					v-bind:class="{activeLi:activeIndex == index}"
-					value="data.value"
+					v-bind:class="{activeLi:activeIndex == index,activeLi2:value == data.name}"
 					@click="valueXZ(data.name,data.value)"
 					@mouseover="showActive(index)"
 					v-text="data.name"
@@ -54,7 +53,8 @@ export default {
 		return {
 			isFocus: false,
 			isdisabled: false,
-			activeIndex: null
+			activeIndex: null,
+			value:""
 		};
 	},
 	methods: {
@@ -77,35 +77,31 @@ export default {
 		showActive(index) {
 			this.activeIndex = index;
 		},
-	},
-	mounted() {
-		let _this = this;
-		document.addEventListener("click", function(e) {
+		documentClick(e){//文档点击事件
 			try {
-				if (!!_this.$refs.select.contains(e.target)) return;
-				_this.isFocus = false;
+				if (this.$refs.select.contains(e.target)) return;
+				this.isFocus = false;
 			} catch (e) {
-			}
-		});
-		if (this.disabled == undefined) {
-			this.isdisabled = false;
-		} else {
-			if (this.disabled !== false) {
-				this.isdisabled = true;
-			} else {
-				this.isdisabled = false;
+				console.log(e)
 			}
 		}
 	},
-	created: function() {
-		this.value = "";
+	mounted() {
+		document.addEventListener("click", this.documentClick); //添加 文档点击事件
+		if(this.disabled || (this.disabled === '')) this.isdisabled = true;
+	},
+	created() {
 		for (var i = 0; i < this.selectData.length; i++) {
 			if (this.selectData[i].value === this.val) {
 				this.value = this.selectData[i].name;
 				break;
 			}
 		}
+	},
+	beforeDestroy(){
+		document.removeEventListener("click", this.documentClick); //移出 文档点击事件
 	}
+
 };
 </script>
 <style scoped>
@@ -163,7 +159,6 @@ export default {
 	box-sizing: border-box;
 	border: 1px solid #e4e7ed;
 	min-width: 240px;
-	border: 1px solid #ccc;
 	top: 50px;
 	left: 0px;
 	border-radius: 5px;
@@ -174,15 +169,15 @@ export default {
 
 .lis::before {
 	content: "";
-	border-left: 1px solid #ccc;
-	border-top: 1px solid #ccc;
+	border-left: 1px solid #e4e7ed;
+	border-top: 1px solid #e4e7ed;
 	background: #fff;
-	width: 12px;
-	height: 12px;
+	width: 8px;
+	height: 8px;
 	display: block;
 	transform-origin: 50% 50%;
 	transform: rotate(45deg);
-	margin: -12px auto 0;
+	margin: -11px 0 0 36px;
 }
 
 .lis li {
@@ -206,6 +201,10 @@ export default {
 
 .lis .activeLi {
 	background-color: #f5f7fa;
+}
+.lis .activeLi2{
+	color: #409eff;
+	font-weight: 700;
 }
 
 .zl-select_icon {

@@ -58,6 +58,14 @@ export default {
 					this.isFocus = !this.isFocus;
 				}
 			}
+		},
+		documentClick(e){//文档点击事件
+			try {
+				if (this.$refs.input.contains(e.target)) return;
+				this.isFocus = false;
+			} catch (e) {
+				console.log(e)
+			}
 		}
 	},
 	watch: {
@@ -72,15 +80,10 @@ export default {
 		this.inputVal = this.value;
 	},
 	mounted() {
-		let _this = this;
-		document.addEventListener("click", function(e) {
-			try {
-				if (_this.$refs.input.contains(e.target)) return;
-				_this.isFocus = false;
-			} catch (e) {
-				console.log(e)
-			}
-		});
+		document.addEventListener("click", this.documentClick); //添加 文档点击事件
+	},
+	beforeDestroy(){
+		document.removeEventListener("click", this.documentClick); //移出 文档点击事件
 	}
 };
 </script>

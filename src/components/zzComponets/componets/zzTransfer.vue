@@ -197,8 +197,7 @@ export default {
 		rightData() {
 			this.isCheck2("no2");
 		},
-		num(curVal, oldVal) {
-			console.log(oldVal);
+		num(curVal) {
 			if (curVal > 0) {
 				this.disabledRight = false;
 			} else {
