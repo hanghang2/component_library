@@ -62,10 +62,14 @@ const routes = [
 				path: "/zzTabs",
 				name: "zzTabs",
 				component: () => import("../views/Main/tabs.vue")
-			},{
+			}, {
 				path: "/zzLoading",
 				name: "zzLoading",
 				component: () => import("../views/Main/loading.vue")
+			},{
+				path: "/zzSlider",
+				name: "zzSlider",
+				component: () => import("../views/Main/slider.vue")
 			},
 		]
 	}

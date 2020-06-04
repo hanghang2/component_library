@@ -1,22 +1,21 @@
 <template>
 	<div class="Table">
 		<p>基础用法</p>
-		<div class="List" style="width: 800px;margin: 20px;">
+		<br />
+		<div class="List" style="width: 800px;">
 			<zz-table :checkedArr="checkedArr" :tableData="tableData" :tableheader="tableheader">
 				<template slot="toolbar" slot-scope="scope">
 					<zz-button class="zbtn" @click.native="view(scope.row,scope.i)">查看</zz-button>
 					<zz-button class="zbtn" @click.native="edit(scope.row,scope.i,scope.editshow)">编辑</zz-button>
 				</template>
 			</zz-table>
-			<br>
-            <zz-button type="primary" @click.native="getCheck">选中提交</zz-button>
+			<br />
+			<zz-button type="primary" @click.native="getCheck">选中提交</zz-button>
 		</div>
-
 	</div>
 </template>
 
 <script>
-
 export default {
 	name: "Table",
 	data() {
@@ -49,37 +48,44 @@ let tableheader = [
 			name: "checked",
 			width: 50,
 			check: true
-		}, {
+		},
+		{
 			name: "日期",
 			field: "date",
 			width: 100,
 			edit: true
-		}, {
+		},
+		{
 			name: "姓名",
 			field: "name",
 			width: 100,
 			edit: true
-		}, {
+		},
+		{
 			name: "省份",
 			field: "province",
 			width: 300,
 			edit: true
-		}, {
+		},
+		{
 			name: "市区",
 			field: "city",
 			width: 100,
 			edit: true
-		}, {
+		},
+		{
 			name: "地址",
 			field: "address",
 			width: 300,
 			edit: true
-		}, {
+		},
+		{
 			name: "邮编",
 			field: "zip",
 			width: 100,
 			edit: false
-		}, {
+		},
+		{
 			name: "操作",
 			width: 150,
 			fixed: "right",
@@ -94,49 +100,56 @@ let tableheader = [
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-02",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-04",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-01",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-03",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-02",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-04",
 			name: "王小虎",
 			province: "上海",
 			city: "普陀区",
 			address: "上海市普陀区金沙江路 1518 弄",
 			zip: 200333
-		}, {
+		},
+		{
 			date: "2016-05-01",
 			name: "王小虎",
 			province: "上海",
@@ -154,10 +167,14 @@ let tableheader = [
 	height: 100%;
 }
 .Table .List {
-    margin-bottom: 30px;
-    border: 1px solid #dddddd;
-    padding: 25px;
-    border-radius: 5px;
+	margin-bottom: 30px;
+	border: 1px solid #dddddd;
+	padding: 25px;
+	border-radius: 5px;
+}
+.Table .List:hover {
+	transition: all 0.5s;
+	box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
 }
 .zbtn {
 	border: none;
@@ -166,5 +183,4 @@ let tableheader = [
 .zbtn:hover {
 	background: none;
 }
-
 </style>
