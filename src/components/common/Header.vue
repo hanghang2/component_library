@@ -15,7 +15,6 @@
 			<li class="menu_item" :class="getClass(0)">
 				<router-link to="/">首页</router-link>
 			</li>
-			{{this.$route.path}}
 		</div>
 	</div>
 </template>

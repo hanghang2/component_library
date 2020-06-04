@@ -13,6 +13,8 @@
 			<span v-for="(item,index) in Array(300)" :key="index">内容</span>
 		</div>
 		<p class="info">
+			<zz-button type="primary" @click.native="zzloading2 = true">显示</zz-button>
+			<zz-button @click.native="zzloading2 = false">关闭</zz-button>
 			background属性添加颜色，zzloadingClass属性添加自定义class
 		</p>
 		<p class="info"></p>
@@ -22,8 +24,8 @@
 export default {
 	data(){
 		return {
-			zzloading:false,
-			zzloading2:true
+			zzloading:true,
+			zzloading2:false
 		}
 	},
 	methods:{
