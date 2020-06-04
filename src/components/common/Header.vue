@@ -87,7 +87,7 @@ export default {
 }
 
 .header_menu .menu_item:hover {
-	border-top: 2px solid #0170fe;
+	/* border-top: 2px solid #0170fe; */
 	transition: color .3s cubic-bezier(.645, .045, .355, 1), border-color .3s cubic-bezier(.645, .045, .355, 1), background .3s cubic-bezier(.645, .045, .355, 1), padding .15s cubic-bezier(.645, .045, .355, 1)
 }
 
