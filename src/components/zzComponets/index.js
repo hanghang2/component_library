@@ -7,6 +7,8 @@ import zzSelect from "./componets/zzSelect";
 import zzCheckbox from "./componets/zzCheckbox";
 import zzCascader from "./componets/zzCascader";
 import zzDatePicker from "./componets/zzDatePicker";
+import zzTransfer from "./componets/zzTransfer";
+import zzTabs from "./componets/zzTabs";
 
 //导出单个组件
 export {
@@ -24,6 +26,8 @@ export default {
 		Vue.component("zzCheckbox", zzCheckbox);
 		Vue.component("zzCascader", zzCascader);
 		Vue.component("zzDatePicker", zzDatePicker);
+		Vue.component("zzTransfer", zzTransfer);
+		Vue.component("zzTabs", zzTabs);
 	}
 };
 

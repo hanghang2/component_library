@@ -29,6 +29,9 @@
 			<li class="nav-list">
 				<router-link to="/zzDatePicker">datePicker日期选择器</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzTransfer">transfer穿梭框</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>数据</a>
@@ -38,6 +41,13 @@
 			</li>
 			<li class="nav-list">
 				<router-link to="/zzTree">tree树</router-link>
+			</li>
+
+			<li class="nav-list nav-basic">
+				<a>导航</a>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzTabs">tabs标签页</router-link>
 			</li>
 		</div>
 		<div class="main_body">

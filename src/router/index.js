@@ -54,6 +54,14 @@ const routes = [
 				path: "/zzDatePicker",
 				name: "zzDatePicker",
 				component: () => import("../views/Main/datePicker.vue")
+			},{
+				path: "/zzTransfer",
+				name: "zzTransfer",
+				component: () => import("../views/Main/transfer.vue")
+			},{
+				path: "/zzTabs",
+				name: "zzTabs",
+				component: () => import("../views/Main/tabs.vue")
 			},
 		]
 	}
