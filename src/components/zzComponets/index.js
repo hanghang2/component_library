@@ -1,4 +1,7 @@
 import Vue from "vue";
+//指令
+import './componets/zzLoading/directive'
+//组件
 import zzTable from "./componets/zzTable";
 import zzTree from "./componets/zzTree";
 import zzButton from "./componets/zzButton";
@@ -9,6 +12,7 @@ import zzCascader from "./componets/zzCascader";
 import zzDatePicker from "./componets/zzDatePicker";
 import zzTransfer from "./componets/zzTransfer";
 import zzTabs from "./componets/zzTabs";
+
 
 //导出单个组件
 export {

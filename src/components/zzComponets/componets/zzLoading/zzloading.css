@@ -1,0 +1,48 @@
+.zzloading-box{
+	position: relative;
+}
+.zzloading-box .zzloading{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0,0%,100%,.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.zzloading-icon svg{
+	height: 42px;
+	width: 42px;
+	animation: loading-rotate 2s linear infinite;
+}
+.zzloading-icon svg .path{
+	animation: loading-dash 1.5s ease-in-out infinite;
+	stroke-dasharray: 90,150;
+	stroke-dashoffset: 0;
+	stroke-width: 2;
+	stroke: #409eff;
+	stroke-linecap: round;
+}
+
+@keyframes loading-dash {
+	0%{
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0;
+	}
+	50%{
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -40px;
+	}
+	100%{
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -120px;
+	}
+}
+
+@keyframes loading-rotate {
+	100%{
+		transform: rotate(1turn);
+	}
+}

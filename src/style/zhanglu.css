@@ -36,6 +36,28 @@ li {
 #nav .main_left {
     flex: 0 0 20%;
     border-right: 1px solid #f3f3f3;
+	max-height: 100%;
+	overflow-y: hidden;
+	padding-bottom: 50px;
+}
+#nav .main_left:hover{
+	overflow-y: auto;
+}
+
+
+#nav .main_left::-webkit-scrollbar {
+	width: 10px!important;
+	height: 10px!important;
+	-webkit-appearance: none;
+}
+#nav .main_left::-webkit-scrollbar-thumb {
+	height: 5px;
+	border: 1px solid transparent;
+	border-top: 0;
+	border-bottom: 0;
+	-webkit-border-radius: 6px;
+	background-color: #ccc;
+	background-clip: padding-box;
 }
 #nav .main_left .nav-list a {
     display: block;

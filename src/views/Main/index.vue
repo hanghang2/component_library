@@ -49,6 +49,12 @@
 			<li class="nav-list">
 				<router-link to="/zzTabs">tabs标签页</router-link>
 			</li>
+			<li class="nav-list nav-basic">
+				<a>提示</a>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzLoading">loading 加载</router-link>
+			</li>
 		</div>
 		<div class="main_body">
 			<router-view></router-view>
