@@ -2,8 +2,7 @@
 	<button type="button" :class="'zlButton ' + buttonType
         + isplain
         + isround
-        + isdisabled
-        ">
+        + isdisabled">
 		<slot></slot>
 	</button>
 </template>

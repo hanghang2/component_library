@@ -1,12 +1,14 @@
 <template>
 	<div class="Table">
-		<div style="width: 800px;margin: 20px;">
+		<p>基础用法</p>
+		<div class="List" style="width: 800px;margin: 20px;">
 			<zz-table :checkedArr="checkedArr" :tableData="tableData" :tableheader="tableheader">
 				<template slot="toolbar" slot-scope="scope">
 					<zz-button class="zbtn" @click.native="view(scope.row,scope.i)">查看</zz-button>
 					<zz-button class="zbtn" @click.native="edit(scope.row,scope.i,scope.editshow)">编辑</zz-button>
 				</template>
 			</zz-table>
+			<br>
             <zz-button type="primary" @click.native="getCheck">选中提交</zz-button>
 		</div>
 
@@ -150,6 +152,12 @@ let tableheader = [
 .Table {
 	background: #ffffff;
 	height: 100%;
+}
+.Table .List {
+    margin-bottom: 30px;
+    border: 1px solid #dddddd;
+    padding: 25px;
+    border-radius: 5px;
 }
 .zbtn {
 	border: none;

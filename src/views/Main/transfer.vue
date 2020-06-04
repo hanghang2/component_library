@@ -1,7 +1,7 @@
 <template>
 	<div class="Transfer">
+		<p>基础用法</p>
 		<div class="list">
-			<span>默认</span>
 			<zz-transfer
 				leftName="列表1"
 				rightName="列表2"
@@ -78,7 +78,9 @@ export default {
 .Transfer {
 	.list {
 		margin-top: 20px;
-		height: 50px;
+		border: 1px solid #dddddd;
+		padding: 25px;
+		border-radius: 5px;
 		span {
 			float: left;
 			width: 100px;

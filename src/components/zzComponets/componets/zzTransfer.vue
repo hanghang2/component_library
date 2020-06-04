@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="item_middle">
-			<zz-button type="primary" @click.native="goLeft()" :disabled="disabledLeft">
+			<zz-button type="primary" @click.native="goLeft()" v-bind:disabled="disabledLeft">
 				<img src="@/assets/RightWhite.png" />
 			</zz-button>
 			<zz-button type="primary" @click.native="goRight()" :disabled="disabledRight">
