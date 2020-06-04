@@ -6,25 +6,35 @@
 			</h1>
 		</div>
 		<div class="header_menu">
-			<li class="menu_item">
+			<li class="menu_item" :class="getClass(2)">
 				<router-link to="/Main">组件</router-link>
 			</li>
-			<li class="menu_item">
+			<li class="menu_item" :class="getClass(1)">
 				<router-link to="/About">文档</router-link>
 			</li>
-			<li class="menu_item">
+			<li class="menu_item" :class="getClass(0)">
 				<router-link to="/">首页</router-link>
 			</li>
+			{{this.$route.path}}
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	data() {
-		return {};
+	data(){
+		return {
+			pathArr:['/','/About']
+		}
 	},
-	methods: {}
+	methods:{
+		getClass(index){
+			if(index === 2 && (this.pathArr.indexOf(this.$route.path) == -1)) return 'active';
+			if(this.$route.path === this.pathArr[index]) return 'active';
+
+			return ''
+		}
+	}
 };
 </script>
 
