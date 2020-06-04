@@ -45,6 +45,10 @@ export default {
 		border: 1px solid #dddddd;
 		padding: 15px 20px;
 		border-radius: 5px;
+		&:hover {
+			transition: all 0.5s;
+			box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
+		}
 	}
 	p.info{
 		padding: 20px 0;
