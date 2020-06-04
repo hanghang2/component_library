@@ -17,7 +17,8 @@
 							<!--checked-->
 							<div v-if="item.check" class="table-cell center" v-bind:style="{width:item.width + 'px'}">
 								<span v-if="item.name != 'checked'" v-text="item.name"></span>
-								<input v-if="item.name == 'checked'" type="checkbox" v-model="allCheck"/>
+								<zzCheckbox v-if="item.name == 'checked'" type="checkbox" v-model="allCheck"></zzCheckbox>
+								<!-- <input v-if="item.name == 'checked'" type="checkbox" v-model="allCheck"/> -->
 							</div>
 						</th>
 					</tr>
@@ -27,7 +28,8 @@
 						<!--checked-->
 						<td>
 							<div v-if="checked" class="table-cell center">
-								<input v-if="checked" type="checkbox" v-model="checkedArr[index]"/>
+								<!-- <input v-if="checked" type="checkbox" v-model="checkedArr[index]"/> -->
+								<zzCheckbox v-if="checked" type="checkbox" v-model="checkedArr[index]"></zzCheckbox>
 							</div>
 						</td>
 						<!--其它行-->

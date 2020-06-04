@@ -67,8 +67,8 @@ export default {
 }
 
 .zzCheckbox-value.isValue {
-	background-color: #409eff;
-	border-color: #409eff;
+	background-color: #0170fe;
+	border-color: #0170fe;
 }
 
 .zzCheckbox-value.isValue:before {
@@ -94,7 +94,7 @@ export default {
 }
 
 .zzCheckbox-content.isValue {
-	color: #409eff;
+	color: #0170fe;
 }
 
 /*zzCheckbox disabled*/
@@ -117,8 +117,8 @@ export default {
 
 /*noConfirm 不确定*/
 .zzCheckbox-value.noConfirm {
-	background-color: #409eff;
-	border-color: #409eff;
+	background-color: #0170fe;
+	border-color: #0170fe;
 }
 
 .zzCheckbox-value.noConfirm:before {
@@ -136,6 +136,6 @@ export default {
 }
 
 .zzCheckbox-content.noConfirm {
-	color: #409eff;
+	color: #0170fe;
 }
 </style>

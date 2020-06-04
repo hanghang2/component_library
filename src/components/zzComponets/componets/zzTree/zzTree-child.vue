@@ -82,8 +82,8 @@ export default {
 .zzTree-child-label{
 	font-size: 14px;
 	color: #333333;
-	height: 26px;
-	line-height: 26px;
+	height: 30px;
+	line-height: 30px;
 	cursor: pointer;
 	padding-left: 5px;
 }

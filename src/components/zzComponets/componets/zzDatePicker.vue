@@ -384,7 +384,7 @@ export default {
 				border: 1px solid #c0c4cc;
 			}
 			&.isfocus {
-				border-color: #409eff !important;
+				border-color: #0170fe !important;
 			}
 		}
 		input:disabled {
@@ -478,7 +478,7 @@ export default {
 		}
 		.calendar-head button:hover,
 		.calendar-head span:hover {
-			color: #409eff;
+			color: #0170fe;
 		}
 		.prightYear,
 		.prightMonth {
@@ -499,7 +499,7 @@ export default {
 			height: 100%;
 		}
 		.today {
-			color: #409eff;
+			color: #0170fe;
 			font-weight: bold;
 		}
 		.prev-month,
@@ -512,7 +512,7 @@ export default {
 		}
 		.available.active span {
 			color: #fff;
-			background-color: #409eff;
+			background-color: #0170fe;
 			border-radius: 50%;
 			display: block;
 			width: 30px;
@@ -528,7 +528,7 @@ export default {
 			cursor: pointer;
 		}
 		.zl-month-table td > div:hover {
-			color: #409eff;
+			color: #0170fe;
 		}
 	}
 }

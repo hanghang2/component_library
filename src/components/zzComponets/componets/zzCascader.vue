@@ -154,7 +154,7 @@ export default {
     border: 1px solid #c0c4cc;
 }
 .zlCascader .zl-Cascader-inner.isfocus {
-    border-color: #409eff !important;
+    border-color: #0170fe !important;
 }
 .zlCascader .zl-cascader_icon {
     position: absolute;
@@ -228,7 +228,7 @@ export default {
 }
 .zlCascader .cascader_list .activeLi {
     background-color: #f5f7fa;
-    color: #409eff;
+    color: #0170fe;
 }
 .zlCascader .cascader_list .zl-cascader_iconitem {
     line-height: 34px;
@@ -272,7 +272,7 @@ export default {
 }
 .zlCascader .listSun .activeLi {
     background-color: #f5f7fa;
-    color: #409eff;
+    color: #0170fe;
 }
 .zlCascader .listLast {
     position: absolute;
@@ -313,7 +313,7 @@ export default {
 }
 .zlCascader .listLast .activeLi {
     background-color: #f5f7fa;
-    color: #409eff;
+    color: #0170fe;
 }
 .zl-input__clear {
 	cursor: pointer;

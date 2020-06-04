@@ -139,7 +139,7 @@ export default {
 }
 
 .isfocus {
-	border-color: #409eff !important;
+	border-color: #0170fe !important;
 }
 
 .isdisabled {
