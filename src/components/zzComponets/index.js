@@ -9,6 +9,7 @@ import zzCascader from "./componets/zzCascader";
 import zzDatePicker from "./componets/zzDatePicker";
 import zzTransfer from "./componets/zzTransfer";
 import zzTabs from "./componets/zzTabs";
+import zzSlider from "./componets/zzSlider";
 
 //导出单个组件
 export {
@@ -28,6 +29,7 @@ export default {
 		Vue.component("zzDatePicker", zzDatePicker);
 		Vue.component("zzTransfer", zzTransfer);
 		Vue.component("zzTabs", zzTabs);
+		Vue.component("zzSlider", zzSlider);
 	}
 };
 

@@ -32,6 +32,9 @@
 			<li class="nav-list">
 				<router-link to="/zzTransfer">transfer穿梭框</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzSlider">slider滑块</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>数据</a>
