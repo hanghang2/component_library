@@ -25,6 +25,17 @@
 			<zz-button type="info" round>信息按钮</zz-button>
 			<zz-button type="warning" round>警告按钮</zz-button>
 			<zz-button type="danger" round>危险按钮</zz-button>
+			<br />
+			<br />
+			<div class="demo-contain">
+				<p>
+					使用
+					<code>type</code>、
+					<code>plain</code>、
+					<code>round</code>和
+					<code>circle</code>属性来定义 Button 的样式。
+				</p>
+			</div>
 		</div>
 		<p>禁用状态</p>
 		<br />
@@ -43,11 +54,74 @@
 			<zz-button type="info" disabled plain>信息按钮</zz-button>
 			<zz-button type="warning" disabled plain>警告按钮</zz-button>
 			<zz-button type="danger" :disabled="true" plain>危险按钮</zz-button>
+			<br />
+			<br />
+			<div class="demo-contain">
+				<p>
+					使用
+					<code>disabled</code>属性来定义按钮是否可用，它接受一个Boolean值。
+				</p>
+			</div>
 		</div>
+
+		<br />
+		<p>属性</p>
+		<table class="table_show">
+			<thead>
+				<tr>
+					<th>参数</th>
+					<th>说明</th>
+					<th>类型</th>
+					<th>可选值</th>
+					<th>默认值</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>type</td>
+					<td>类型</td>
+					<td>string</td>
+					<td>primary / success / warning / danger / info / text</td>
+					<td>—</td>
+				</tr>
+				<tr>
+					<td>plain</td>
+					<td>是否朴素按钮</td>
+					<td>boolean</td>
+					<td>—</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<td>round</td>
+					<td>是否圆角按钮</td>
+					<td>boolean</td>
+					<td>—</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<td>circle</td>
+					<td>是否圆形按钮</td>
+					<td>boolean</td>
+					<td>—</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<td>disabled</td>
+					<td>是否禁用状态</td>
+					<td>boolean</td>
+					<td>—</td>
+					<td>false</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </template>
 <script>
-export default {};
+export default {
+	data() {
+		return {};
+	}
+};
 </script>
 <style scoped>
 .Button .buttonList {
