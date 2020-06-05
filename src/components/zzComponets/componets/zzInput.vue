@@ -1,7 +1,7 @@
 <template>
 	<div class="zlInput" @click="changes" ref="input">
 		<textarea v-if="type=='textarea'" autocomplete="off" class="zl-textarea__inner"
-			v-bind:class="{isfocus:isFocus}"
+			v-bind:class="{isfocus:isFocus}"  v-model="inputVal"
 			:placeholder="placeholder"
 			:rows="rows"
 			:maxlength="maxlength"
@@ -17,7 +17,7 @@
 		<span v-show="clearable !== false" @click="clear" class="zl-input_isclearable">
 			<img class="zl-input__clear" src="@/assets/clearable.png" />
 		</span>
-		<span class="limit_num" v-show="showWordLimit !== false && maxlength ">0/{{maxlength}}</span>
+		<span class="limit_num" v-show="showWordLimit !== false && maxlength ">{{inputVal.length}}/{{maxlength}}</span>
 	</div>
 </template>
 <script>
@@ -100,7 +100,6 @@ export default {
 	},
 	created() {
 		this.inputVal = this.value;
-		console.log(this.showWordLimit)
 	},
 	mounted() {
 		document.addEventListener("click", this.documentClick); //添加 文档点击事件
@@ -198,7 +197,7 @@ export default {
 .limit_num {
 	position: absolute;
     right: 12px;
-    bottom: 3px;
+    bottom: 0px;
     font-size: 12px;
     color: #909399;
 }
