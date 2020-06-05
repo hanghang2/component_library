@@ -2,13 +2,27 @@
 	<div class="Transfer">
 		<p>基础用法</p>
 		<div class="list">
-			<zz-transfer
-				leftName="列表1"
-				rightName="列表2"
+			<zz-transfer leftName="列表1" rightName="列表2"
 				:transferLeft="dataListLeft"
 				:transferRight="datalistRight"
 			></zz-transfer>
 		</div>
+		<br />
+		<br />
+		<p>属性</p>
+		<table class="table_show">
+			<thead>
+				<tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>leftName</td><td>左侧列表名称</td><td>string</td><td>—</td><td>—</td></tr>
+				<tr><td>rightName</td><td>右侧列表名称</td><td>string</td><td>—</td><td>—</td></tr>
+				<tr><td>transferLeft</td><td>左侧列表数据</td><td>array</td><td>—</td><td>[]</td></tr>
+				<tr><td>transferRight</td><td>右侧列表数据</td><td>array</td><td>—</td><td>[]</td></tr>
+			</tbody>
+		</table>
+		<p>详细文档链接</p>
+		<a href="http://note.youdao.com/groupshare/?token=C71C52867D5B4CDFA32A93F9F6AC4AA6&gid=116249960" target="_blank">http://note.youdao.com/groupshare/?token=C71C52867D5B4CDFA32A93F9F6AC4AA6&gid=116249960</a>
 	</div>
 </template>
 <script>
@@ -89,6 +103,9 @@ export default {
 			transition: all 0.5s;
 			box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
 		}
+	}
+	a {
+		color: #0170fe;
 	}
 }
 </style>
