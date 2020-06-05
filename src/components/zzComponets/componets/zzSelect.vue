@@ -1,11 +1,8 @@
 <template>
 	<div class="zl-select" @click="changes" ref="select">
-		<input
-				v-model="value"
-				type="text"
-				readonly="readonly"
-				autocomplete="off"
-				placeholder="请选择"
+		<input v-model="value" type="text" readonly="readonly" autocomplete="off"
+				:name="name"
+				:placeholder="placeholder"
 				class="zl-select-input"
 				v-bind:class="{isfocus:isFocus,isdisabled:isdisabled}"
 		/>
@@ -45,9 +42,15 @@ export default {
 			},
 			type: String
 		},
+		placeholder: {
+			default: "请选择"
+		},
 		disabled: {
 			default: false
-		}
+		},
+		name: {
+			default: ''
+		},
 	},
 	data() {
 		return {
@@ -130,6 +133,9 @@ export default {
 	transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+input::-webkit-input-placeholder{
+  color:#ccc;
+}
 .zl-select-input:hover {
 	border-color: #c0c4cc;
 }

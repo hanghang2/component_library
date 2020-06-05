@@ -22,7 +22,7 @@
 		</div>
 		<h3>开发文档</h3>
 		<p>
-			<a target="_blank" href="https://note.youdao.com/group/#/116249960/(folder/901644570)?restore=true">https://note.youdao.com/group/#/116249960/(folder/901644570)?restore=true</a>
+			<a target="_blank" href="http://note.youdao.com/groupshare/?token=C2931E0ED4054FBA899618B17009A967&gid=116249960">http://note.youdao.com/groupshare/?token=C2931E0ED4054FBA899618B17009A967&gid=116249960</a>
 		</p>
 	</div>
 </template>

@@ -32,7 +32,7 @@ export default {
 		},
 		placeholder: {
 			default: function() {
-				return false;
+				return "请输入内容";
 			},
 			type: String
 		},
@@ -43,10 +43,10 @@ export default {
 			default: false
 		},
 		type: {
-			default: false
+			default: "text"
 		},
 		rows: {
-			default: false
+			default: 2
 		},
 		maxlength: {
 			default: false
@@ -114,7 +114,12 @@ export default {
 	width: 240px;
 	position: relative;
 }
-
+input::-webkit-input-placeholder{
+  color:#ccc;
+}
+textarea::-webkit-input-placeholder{
+  color:#ccc;
+}
 .zlInput .zl-input__inner {
 	background-color: #fff;
 	background-image: none;
