@@ -1,17 +1,23 @@
 <template>
 	<div class="zlInput" @click="changes" ref="input">
-		<input
-				type="text"
-				autocomplete="off"
-				class="zl-input__inner"
-				v-bind:class="{isfocus:isFocus}"
-				v-model="inputVal"
-				:placeholder="placeholder"
-				:disabled="disabled !== false"
+		<textarea v-if="type=='textarea'" autocomplete="off" class="zl-textarea__inner"
+			v-bind:class="{isfocus:isFocus}"
+			:placeholder="placeholder"
+			:rows="rows"
+			:maxlength="maxlength"
+			:minlength="minlength"
+		></textarea>
+		<input :type="type" v-else autocomplete="off" class="zl-input__inner"
+			v-bind:class="{isfocus:isFocus}" v-model="inputVal"
+			:placeholder="placeholder"
+			:disabled="disabled !== false"
+			:maxlength="maxlength"
+			:minlength="minlength"
 		/>
 		<span v-show="clearable !== false" @click="clear" class="zl-input_isclearable">
-            <img class="zl-input__clear" src="@/assets/clearable.png"/>
-        </span>
+			<img class="zl-input__clear" src="@/assets/clearable.png" />
+		</span>
+		<span class="limit_num" v-show="showWordLimit !== false && maxlength ">0/{{maxlength}}</span>
 	</div>
 </template>
 <script>
@@ -34,6 +40,21 @@ export default {
 			default: false
 		},
 		disabled: {
+			default: false
+		},
+		type: {
+			default: false
+		},
+		rows: {
+			default: false
+		},
+		maxlength: {
+			default: false
+		},
+		minlength: {
+			default: false
+		},
+		showWordLimit: {
 			default: false
 		}
 	},
@@ -59,12 +80,13 @@ export default {
 				}
 			}
 		},
-		documentClick(e){//文档点击事件
+		documentClick(e) {
+			//文档点击事件
 			try {
 				if (this.$refs.input.contains(e.target)) return;
 				this.isFocus = false;
 			} catch (e) {
-				console.log(e)
+				console.log(e);
 			}
 		}
 	},
@@ -78,11 +100,12 @@ export default {
 	},
 	created() {
 		this.inputVal = this.value;
+		console.log(this.showWordLimit)
 	},
 	mounted() {
 		document.addEventListener("click", this.documentClick); //添加 文档点击事件
 	},
-	beforeDestroy(){
+	beforeDestroy() {
 		document.removeEventListener("click", this.documentClick); //移出 文档点击事件
 	}
 };
@@ -110,7 +133,6 @@ export default {
 	width: 100%;
 	cursor: pointer;
 }
-
 .zlInput .zl-input__inner:hover {
 	border: 1px solid #c0c4cc;
 }
@@ -126,8 +148,8 @@ export default {
 	cursor: not-allowed;
 }
 .zlInput input:disabled:hover {
-	 border: 1px solid #e4e7ed;
- }
+	border: 1px solid #e4e7ed;
+}
 .zlInput .zl-input_isclearable {
 	position: absolute;
 	right: 0;
@@ -148,5 +170,36 @@ export default {
 	cursor: pointer;
 	transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 	width: 14px;
+}
+
+.zlInput .zl-textarea__inner {
+	display: block;
+	resize: vertical;
+	padding: 5px 15px;
+	line-height: 1.5;
+	box-sizing: border-box;
+	width: 100%;
+	font-size: inherit;
+	color: #606266;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #dcdfe6;
+	border-radius: 4px;
+	transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+	min-height: 33px;
+	font-family: auto;
+}
+.zl-textarea__inner:hover {
+	border: 1px solid #c0c4cc;
+}
+.zl-textarea__inner.isfocus {
+	border-color: #0170fe !important;
+}
+.limit_num {
+	position: absolute;
+    right: 12px;
+    bottom: 3px;
+    font-size: 12px;
+    color: #909399;
 }
 </style>

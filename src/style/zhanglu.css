@@ -45,12 +45,12 @@ li {
 }
 
 
-::-webkit-scrollbar {
+#nav .main_left::-webkit-scrollbar, #nav .main_body::-webkit-scrollbar{
 	width: 10px!important;
 	height: 10px!important;
 	-webkit-appearance: none;
 }
-::-webkit-scrollbar-thumb {
+#nav .main_left::-webkit-scrollbar-thumb, #nav .main_body::-webkit-scrollbar-thumb {
 	height: 5px;
 	border: 1px solid transparent;
 	border-top: 0;

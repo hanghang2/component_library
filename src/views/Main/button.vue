@@ -114,6 +114,8 @@
 				</tr>
 			</tbody>
 		</table>
+		<p>详细文档链接</p>
+		<a target="_blank" href="https://note.youdao.com/share/?token=672BFB410C4449D7ACDC83D5485926E1&gid=116249960">https://note.youdao.com/share/?token=672BFB410C4449D7ACDC83D5485926E1&gid=116249960</a>
 	</div>
 </template>
 <script>
@@ -138,5 +140,8 @@ export default {
 	width: 80px;
 	display: inline-block;
 	text-align: center;
+}
+a {
+	color: #0170fe;
 }
 </style>
