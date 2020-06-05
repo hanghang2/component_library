@@ -2,7 +2,7 @@
 	<div class="about">
 		<h3>版本</h3>
 		<p>
-			<a href="https://github.com/15738802288/component_library">https://github.com/15738802288/component_library</a>
+			<a target="_blank" href="https://github.com/15738802288/component_library">https://github.com/15738802288/component_library</a>
 		</p>
 		<h3>开始</h3>
 		<p>1、zzComponets文件夹放到项目中(可以使用 Git Submodule 添加子子模块的方式，公共资源的处理方式)</p>
@@ -20,6 +20,10 @@
 			<p>a、样式 ： 组件使用css，不引入外部资源，不用依赖安装其它模块；</p>
 			<p>b、图标库可以使用项目zzComponets目录下的文件，或者安装引入使用阿里云图标；</p>
 		</div>
+		<h3>开发文档</h3>
+		<p>
+			<a target="_blank" href="https://note.youdao.com/group/#/116249960/(folder/901644570)?restore=true">https://note.youdao.com/group/#/116249960/(folder/901644570)?restore=true</a>
+		</p>
 	</div>
 </template>
 
