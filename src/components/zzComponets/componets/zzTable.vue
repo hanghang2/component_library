@@ -18,7 +18,6 @@
 							<div v-if="item.check" class="table-cell center" v-bind:style="{width:item.width + 'px'}">
 								<span v-if="item.name != 'checked'" v-text="item.name"></span>
 								<zzCheckbox v-if="item.name == 'checked'" type="checkbox" v-model="allCheck"></zzCheckbox>
-								<!-- <input v-if="item.name == 'checked'" type="checkbox" v-model="allCheck"/> -->
 							</div>
 						</th>
 					</tr>
@@ -26,9 +25,8 @@
 				<tbody>
 					<tr v-for="(item,index) in tableData" v-bind:class="{active: checkedArr[index]}" :key="index">
 						<!--checked-->
-						<td>
-							<div v-if="checked" class="table-cell center">
-								<!-- <input v-if="checked" type="checkbox" v-model="checkedArr[index]"/> -->
+						<td v-if="checked">
+							<div class="table-cell center">
 								<zzCheckbox v-if="checked" type="checkbox" v-model="checkedArr[index]"></zzCheckbox>
 							</div>
 						</td>
@@ -67,7 +65,6 @@ export default {
 	props: [
 		"tableData", "tableheader", "checkedArr"
 	],
-	name: "zyhTable",
 	data() {
 		return {
 			editShow: [],
@@ -78,8 +75,10 @@ export default {
 	},
 	watch: {
 		allCheck: function(val) {
-			for (var i = 0; i < this.checkedArr.length; i++) {
-				this.checkedArr[i] = val;
+			if(this.checkedArr){
+				for (var i = 0; i < this.checkedArr.length; i++) {
+					this.checkedArr[i] = val;
+				}
 			}
 		}
 	},
@@ -127,16 +126,18 @@ table {
 }
 
 .table-cell {
-	color: #969399;
-	padding: 8px;
+	padding: 6px;
+	font-weight: 400;
+}
+th {
+	color: #909399;
 }
 
 .table-cell-fixed {
 	position: absolute;
 	right: -1px;
 	background-color: white;
-	color: #969399;
-	padding: 8px;
+	padding: 6px;
 	border-left: 1px solid #ebeef5;
 	border-right: 1px solid #ebeef5;
 	box-shadow: -3px 0px 3px 0px #f5f5f5;
@@ -165,9 +166,5 @@ tr.active {
 
 tbody tr:hover {
 	background-color: #f5f7fa;
-}
-
-thead th {
-	border-bottom: 2px solid #ebeef5;
 }
 </style>

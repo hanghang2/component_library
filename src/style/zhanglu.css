@@ -17,6 +17,9 @@ a {
 li {
     list-style: none;
 }
+img {
+	-webkit-user-drag: none;
+  }
 #app {
     font-family: Avenir,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji,sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -45,7 +48,12 @@ li {
 }
 
 
-#nav .main_left::-webkit-scrollbar, #nav .main_body::-webkit-scrollbar{
+#nav .main_left::-webkit-scrollbar {
+	width: 0px!important;
+	height: 0px!important;
+	-webkit-appearance: none;
+}
+#nav .main_body::-webkit-scrollbar{
 	width: 10px!important;
 	height: 10px!important;
 	-webkit-appearance: none;
