@@ -14,13 +14,17 @@
 		<p>禁用菜单</p>
 		<br/>
 		<div class="list">
-			<zz-nav-menu :navData="datas2" defaultActive="1" backgroundColor="#545c64" textColor="#fff"
+			<zz-nav-menu :navData="datas2" defaultActive="0" backgroundColor="#545c64" textColor="#fff"
 			             activeTextColor="#ffd04b"></zz-nav-menu>
 		</div>
 		<p>垂直菜单</p>
 		<br/>
 		<div class="list">
-			<zz-nav-menu defaultActive="0" :navData="datas" mode="vertical"></zz-nav-menu>
+			<zz-nav-menu defaultActive="0" :navData="datas3" mode="vertical"></zz-nav-menu>
+			<zz-nav-menu :navData="datas3" defaultActive="1" backgroundColor="#545c64" textColor="#fff"  mode="vertical"
+			             activeTextColor="#ffd04b" style="float: right"></zz-nav-menu>
+						 
+			<div style="clear: both;"></div>
 		</div>
 		<p>属性</p>
 		<table class="table_show">
@@ -144,7 +148,36 @@ export default {
 				},
 				{ name: "消息中心", disabled: true },
 				{ name: "订单管理" }
-			]
+			],
+			datas3: [
+				{ name: "处理中心" },
+				{
+					name: "我的工作台",
+					child: [
+						{ name: "选项1" },
+						{ name: "选项2" },
+						{ name: "选项3" },
+						{ name: "选项4",}
+					]
+				},
+				{ 
+					name: "消息中心",
+					child: [
+						{ name: "选项1" },
+						{ name: "选项2" },
+						{
+							name: "选项3",
+							child: [
+								{ name: "选项3-1" },
+								{ name: "选项3-2" },
+								{ name: "选项3-3" },
+								{ name: "选项3-4" }
+							]
+						}
+					] 
+				},
+				{ name: "订单管理" }
+			],
 		};
 	},
 	methods: {}
@@ -162,5 +195,9 @@ export default {
 .NavMenu .list:hover {
 	transition: all 0.5s;
 	box-shadow: 0 0 8px 0 #eee, 0 2px 4px 0 #eee;
+}
+.vertical {
+	float: left;
+	margin-right: 50px;
 }
 </style>

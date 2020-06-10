@@ -56,12 +56,12 @@ export default {
 }
 .zl-tabs li.activeLi {
 	transition: all 0.3s;
-	color: #409eff;
-	border-bottom: 2px solid #409eff;
+	color: #0170fe;
+	border-bottom: 2px solid #0170fe;
 }
 .zl-tabs li:hover {
 	transition: all 0.3s;
-	color: #409eff;
+	color: #0170fe;
 }
 .zl-tabs li .close {
 	width: 16px;
@@ -101,7 +101,7 @@ export default {
 }
 .zl-tabs.card li.activeLi {
 	transition: all 0.3s;
-	color: #409eff;
+	color: #0170fe;
 	border-bottom: 1px solid #fff;
 }
 .zl-tabs.card li:nth-last-of-type(1) {
@@ -117,7 +117,7 @@ export default {
 }
 .zl-tabs.border-card li.activeLi {
 	transition: all 0.3s;
-	color: #409eff;
+	color: #0170fe;
 	border-bottom: none;
 	background-color: #fff;
 	border-right: 1px solid #e4e7ed;
