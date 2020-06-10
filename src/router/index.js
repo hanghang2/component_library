@@ -70,6 +70,10 @@ const routes = [
 				path: "/zzSlider",
 				name: "zzSlider",
 				component: () => import("../views/Main/slider.vue")
+			},{
+				path: "/zzNavMenu",
+				name: "zzNavMenu",
+				component: () => import("../views/Main/NavMenu.vue")
 			},
 		]
 	}

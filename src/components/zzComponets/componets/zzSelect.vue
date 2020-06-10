@@ -238,7 +238,6 @@ input::-webkit-input-placeholder{
 }
 .zl-select .zl-input_isclearable {
 	position: absolute;
-	right: 0;
 	width: 25px;
 	height: 100%;
 	right: 5px;

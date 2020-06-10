@@ -50,6 +50,9 @@
 				<a>导航</a>
 			</li>
 			<li class="nav-list">
+				<router-link to="/zzNavMenu">NavMenu导航</router-link>
+			</li>
+			<li class="nav-list">
 				<router-link to="/zzTabs">tabs标签页</router-link>
 			</li>
 			<li class="nav-list nav-basic">

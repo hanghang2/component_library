@@ -13,6 +13,7 @@ import zzDatePicker from "./componets/zzDatePicker";
 import zzTransfer from "./componets/zzTransfer";
 import zzTabs from "./componets/zzTabs";
 import zzSlider from "./componets/zzSlider";
+import zzNavMenu from "./componets/zzNavMenu";
 
 
 //导出单个组件
@@ -34,6 +35,7 @@ export default {
 		Vue.component("zzTransfer", zzTransfer);
 		Vue.component("zzTabs", zzTabs);
 		Vue.component("zzSlider", zzSlider);
+		Vue.component("zzNavMenu", zzNavMenu);
 	}
 };
 

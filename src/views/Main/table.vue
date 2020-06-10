@@ -285,7 +285,7 @@ let tableheader = [
 	border: 1px solid #dddddd;
 	padding: 25px;
 	border-radius: 5px;
-	width: 100%;
+	width: 800px;
 }
 .Table .List:hover {
 	transition: all 0.5s;
