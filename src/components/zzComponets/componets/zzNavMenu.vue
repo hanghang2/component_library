@@ -2,7 +2,7 @@
 	<div class="zz-nav-menu" :style="{'background': backgroundColor,'color': textColor}" :class="mode">
 		<ul class="zz-menu-demo">
 			<li v-for="(item,index) in navData" :key="index" @click.stop="isActive(item,index)" @mouseenter="show(item,index)" @mouseleave="hide(index)"
-			    v-bind:class="{'isactive': index == isactive && !item.child && mode == 'vertical','isdisabled':item.disabled}" class="menuList"
+			    v-bind:class="{'isactive': index == isactive && !item.child,'isdisabled':item.disabled}" class="menuList"
 			    :style="{'color': index == isactive ? activeTextColor : textColor,'border-bottom-color': activeTextColor}"
 			>
 				{{item.name}}

@@ -3,11 +3,11 @@
 		<div class="item_left">
 			<p class="shuttle-title" @click="isAllCheck()">
 				<i class="shuttle-check" v-bind:class="{'is-checked': isallcheck,'is-havecheck':ishavecheck}"></i>
-				<span class="shuttle-title-text">{{leftName}}</span>
-				<span class="shuttle-title-num">{{num}}/{{leftData.length}}</span>
+				<span class="shuttle-title-text">{{ leftName }}</span>
+				<span class="shuttle-title-num">{{ num }}/{{ leftData.length }}</span>
 			</p>
 			<div class="shuttle-body">
-				<li v-for="(item,index) in leftData" :key="item.checkid" @click="isCheck(index)">
+				<li v-for="(item,index) in leftData" :key="item.checkid" @click="isCheck(item,index)" v-bind:class="{ 'isdisabled': item.disabled }">
 					<i class="shuttle-check" v-bind:class="{'is-checked': item.checked}"></i>
 					<span v-text="item.name"></span>
 				</li>
@@ -15,20 +15,20 @@
 		</div>
 		<div class="item_middle">
 			<zz-button type="primary" @click.native="goLeft()" v-bind:disabled="disabledLeft">
-				<img src="@/assets/RightWhite.png" />
+				<img src="@/assets/RightWhite.png" /><span class="buttom_txt">{{ leftButtom }}</span>
 			</zz-button>
 			<zz-button type="primary" @click.native="goRight()" :disabled="disabledRight">
-				<img src="@/assets/leftWhite.png" />
+				<span class="buttom_txt right">{{ rightButtom }}</span><img src="@/assets/leftWhite.png" />
 			</zz-button>
 		</div>
 		<div class="item_right">
 			<p class="shuttle-title" @click="isAllCheck2()">
-				<i class="shuttle-check" v-bind:class="{'is-checked': isallcheck2,'is-havecheck':ishavecheck2}"></i>
-				<span class="shuttle-title-text">{{rightName}}</span>
-				<span class="shuttle-title-num">{{num2}}/{{rightData.length}}</span>
+				<i class="shuttle-check" v-bind:class="{ 'is-checked': isallcheck2,'is-havecheck':ishavecheck2 }"></i>
+				<span class="shuttle-title-text">{{ rightName }}</span>
+				<span class="shuttle-title-num">{{ num2 }}/{{ rightData.length }}</span>
 			</p>
 			<div class="shuttle-body">
-				<li v-for="(item,index2) in rightData" :key="item.checkid" @click="isCheck2(index2)">
+				<li v-for="(item,index2) in rightData" :key="item.checkid" @click="isCheck2(item,index2)"  v-bind:class="{ 'isdisabled': item.disabled }">
 					<i class="shuttle-check" v-bind:class="{'is-checked': item.checked}"></i>
 					<span v-text="item.name"></span>
 				</li>
@@ -62,7 +62,19 @@ export default {
 				return [];
 			},
 			type: Array
-		}
+		},
+		leftButtom: {
+			default: function() {
+				return "";
+			},
+			type: String
+		},
+		rightButtom: {
+			default: function() {
+				return "";
+			},
+			type: String
+		},
 	},
 	data() {
 		return {
@@ -87,12 +99,18 @@ export default {
 			var num = 0;
 			for (var i = 0; i < this.leftData.length; i++) {
 				this.leftData[i].checked = this.isallcheck;
-				if (this.leftData[i].checked) num++;
+				if (this.leftData[i].checked && !this.leftData[i].disabled) num++;
+				if(this.leftData[i].disabled){
+					this.leftData[i].checked = false
+				}
 			}
 			this.ishavecheck = false;
 			this.getNum(num);
 		},
-		isCheck(index) {
+		isCheck(item,index) {
+			if(item.disabled){
+				return false
+			}
 			if (index != "no") {
 				this.leftData[index].checked = !this.leftData[index].checked;
 			}
@@ -131,12 +149,18 @@ export default {
 			var num2 = 0;
 			for (var i = 0; i < this.rightData.length; i++) {
 				this.rightData[i].checked = this.isallcheck2;
-				if (this.rightData[i].checked) num2++;
+				if (this.rightData[i].checked && !this.rightData[i].disabled) num2++;
+				if(this.rightData[i].disabled){
+					this.rightData[i].checked = false
+				}
 			}
 			this.ishavecheck2 = false;
 			this.getNum2(num2);
 		},
-		isCheck2(index) {
+		isCheck2(item,index) {
+			if(item.disabled){
+				return false
+			}
 			if (index != "no2") {
 				this.rightData[index].checked = !this.rightData[index].checked;
 			}
@@ -177,6 +201,8 @@ export default {
 					i++;
 				}
 			}
+			this.isallcheck = false;
+			this.ishavecheck = false;
 		},
 		goLeft() {
 			for (var i = 0; i < this.rightData.length; ) {
@@ -188,14 +214,16 @@ export default {
 					i++;
 				}
 			}
+			this.isallcheck = false;
+			this.ishavecheck = false;
 		}
 	},
 	watch: {
 		leftData() {
-			this.isCheck("no");
+			this.isCheck('',"no");
 		},
 		rightData() {
-			this.isCheck2("no2");
+			this.isCheck2('',"no2");
 		},
 		num(curVal) {
 			if (curVal > 0) {
@@ -319,6 +347,15 @@ export default {
 	padding-left: 15px;
 	display: block;
 }
+.zlTransfer .shuttle-body li.isdisabled {
+	color: #c0c4cc !important;
+    cursor: not-allowed;
+}
+.zlTransfer .shuttle-body li.isdisabled .shuttle-check{
+	background-color: #edf2fc;
+    border-color: #dcdfe6;
+    cursor: not-allowed;
+}
 .zlTransfer .shuttle-body li span {
 	vertical-align: middle;
 }
@@ -329,5 +366,13 @@ export default {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0 30px;
+}
+.buttom_txt {
+	float: right;
+    height: 20px;
+    line-height: 20px;
+}
+.buttom_txt.right {
+	float: left;
 }
 </style>
