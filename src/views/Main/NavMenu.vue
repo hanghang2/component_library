@@ -10,12 +10,20 @@
 		<div class="list">
 			<zz-nav-menu :navData="datas" defaultActive="1" backgroundColor="#545c64" textColor="#fff"
 			             activeTextColor="#ffd04b"></zz-nav-menu>
+			<br/>
+			<div class="demo-contain">
+				<p>使用<code>background-color</code>、<code>text-color</code>和<code>active-text-color</code>，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。</p>
+			</div>
 		</div>
 		<p>禁用菜单</p>
 		<br/>
 		<div class="list">
 			<zz-nav-menu :navData="datas2" defaultActive="0" backgroundColor="#545c64" textColor="#fff"
 			             activeTextColor="#ffd04b"></zz-nav-menu>
+			<br/>
+			<div class="demo-contain">
+				<p>数据中心使用<code>disabled</code>参数指定是否禁用菜单。</p>
+			</div>
 		</div>
 		<p>垂直菜单</p>
 		<br/>
@@ -24,6 +32,10 @@
 			<zz-nav-menu :navData="datas3" backgroundColor="#545c64" textColor="#fff"  mode="vertical"
 			             activeTextColor="#ffd04b" style="float: right"></zz-nav-menu>			 
 			<div style="clear: both;"></div>
+			<br/>
+			<div class="demo-contain">
+				<p>使用<code>mode</code>属性可以使导航菜单变更为垂直模式。</p>
+			</div>
 		</div>
 		<p>属性</p>
 		<table class="table_show">
@@ -82,7 +94,7 @@
 			</tbody>
 		</table>
 		<p>详细文档链接</p>
-		<br/>
+		<a target="_blank" href="http://note.youdao.com/groupshare/?token=27074E7FC3E94BB09360A083A48854D6&gid=116249960">http://note.youdao.com/groupshare/?token=27074E7FC3E94BB09360A083A48854D6&gid=116249960</a>
 	</div>
 </template>
 
@@ -198,5 +210,8 @@ export default {
 .vertical {
 	float: left;
 	margin-right: 50px;
+}
+a {
+	color: #0170fe;
 }
 </style>
