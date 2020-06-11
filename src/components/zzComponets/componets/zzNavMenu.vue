@@ -1,37 +1,8 @@
 <template>
 	<div class="zz-nav-menu" :style="{'background': backgroundColor,'color': textColor}" :class="mode">
-		<ul class="zz-menu-demo" v-if="mode !== 'vertical'">
-			<li v-for="(item,index) in navData" :key="index" @click="isActive(item,index)" @mouseenter="show(item)" @mouseleave="hide()"
-			    v-bind:class="{'isactive': index == isactive,'isdisabled':item.disabled}" class="menuList"
-			    :style="{'color': index == isactive ? activeTextColor : textColor,'border-bottom-color': activeTextColor}"
-			>
-				{{item.name}}
-				<span v-if="item.child" v-show="!isHover" class="zl-select_icon">
-					<img class="zl-input__clear" src="@/assets/jiantouDown.png"/>
-				</span>
-				<span v-if="item.child" v-show="isHover" class="zl-select_icon">
-					<img class="zl-input__clear" src="@/assets/jiantouUp.png"/>
-				</span>
-				<div v-if="item.child" class="icondiv">
-					<transition name="fade">
-						<ul v-if="item.child" class="menuList-child" v-show="isHover"
-						    :style="{'background': backgroundColor,'color': textColor}">
-							<zz-nav-menu :navData="item.child"
-							             :backgroundColor="backgroundColor"
-							             :textColor="textColor"
-							             :activeTextColor="activeTextColor"
-							             :defaultActive="defaultActive"
-							             :mode="mode"
-							></zz-nav-menu>
-						</ul>
-					</transition>
-				</div>
-			</li>
-			<div style="clear: both;"></div>
-		</ul>
-		<ul class="zz-menu-demo" v-else>
-			<li v-for="(item,index) in navData" :key="index" @click.stop="isActive(item,index)"
-			    v-bind:class="{'isactive': index == isactive,'isdisabled':item.disabled}" class="menuList"
+		<ul class="zz-menu-demo">
+			<li v-for="(item,index) in navData" :key="index" @click.stop="isActive(item,index)" @mouseenter="show(item)" @mouseleave="hide()"
+			    v-bind:class="{'isactive': index == isactive && !item.child && mode == 'vertical','isdisabled':item.disabled}" class="menuList"
 			    :style="{'color': index == isactive ? activeTextColor : textColor,'border-bottom-color': activeTextColor}"
 			>
 				{{item.name}}
@@ -67,7 +38,7 @@ export default {
 	data() {
 		return {
 			isHover: false,
-			isactive: 0
+			isactive: ''
 		};
 	},
 	methods: {
@@ -98,8 +69,6 @@ export default {
 				this.isHover = false;
 			}
 		}
-	},
-	mounted() {
 	},
 	created: function() {
 		this.isactive = this.defaultActive;
@@ -197,6 +166,7 @@ export default {
 
 .zz-nav-menu .zz-menu-demo .menuList .menuList-child .zz-menu-demo {
 	padding-left: 0;
+	height: auto;
 }
 
 .zz-nav-menu .zz-menu-demo .menuList .menuList-child .menuList {
@@ -259,8 +229,8 @@ export default {
 }
 
 .zz-nav-menu.vertical .zz-menu-demo .menuList .menuList-child .menuList {
-	text-align: center;
-	padding-right: 0;
+	padding-right: 0;    
+	padding-left: 55px;
 }
 
 .zz-nav-menu.vertical .zz-menu-demo .menuList .menuList-child .menuList img {
@@ -273,7 +243,7 @@ export default {
 	color: #c0c4cc;
 	transition: all 0.3s;
 	margin-top: 0px;
-	position: absolute;
+	/* position: absolute; */
 	right: 5px;
 	top: 0;
 	display: flex;

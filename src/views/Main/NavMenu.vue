@@ -20,10 +20,9 @@
 		<p>垂直菜单</p>
 		<br/>
 		<div class="list">
-			<zz-nav-menu defaultActive="0" :navData="datas3" mode="vertical"></zz-nav-menu>
-			<zz-nav-menu :navData="datas3" defaultActive="1" backgroundColor="#545c64" textColor="#fff"  mode="vertical"
-			             activeTextColor="#ffd04b" style="float: right"></zz-nav-menu>
-						 
+			<zz-nav-menu :navData="datas3" mode="vertical"></zz-nav-menu>
+			<zz-nav-menu :navData="datas3" backgroundColor="#545c64" textColor="#fff"  mode="vertical"
+			             activeTextColor="#ffd04b" style="float: right"></zz-nav-menu>			 
 			<div style="clear: both;"></div>
 		</div>
 		<p>属性</p>
