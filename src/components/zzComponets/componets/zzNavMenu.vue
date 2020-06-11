@@ -1,20 +1,20 @@
 <template>
 	<div class="zz-nav-menu" :style="{'background': backgroundColor,'color': textColor}" :class="mode">
 		<ul class="zz-menu-demo">
-			<li v-for="(item,index) in navData" :key="index" @click.stop="isActive(item,index)" @mouseenter="show(item)" @mouseleave="hide()"
+			<li v-for="(item,index) in navData" :key="index" @click.stop="isActive(item,index)" @mouseenter="show(item,index)" @mouseleave="hide(index)"
 			    v-bind:class="{'isactive': index == isactive && !item.child && mode == 'vertical','isdisabled':item.disabled}" class="menuList"
 			    :style="{'color': index == isactive ? activeTextColor : textColor,'border-bottom-color': activeTextColor}"
 			>
 				{{item.name}}
-				<span v-if="item.child" v-show="!isHover" class="zl-select_icon">
+				<span v-if="item.child" v-show="!isHoverArr[index]" class="zl-select_icon">
 					<img class="zl-input__clear" src="@/assets/jiantouDown.png"/>
 				</span>
-				<span v-if="item.child" v-show="isHover" class="zl-select_icon">
+				<span v-if="item.child" v-show="isHoverArr[index]" class="zl-select_icon">
 					<img class="zl-input__clear" src="@/assets/jiantouUp.png"/>
 				</span>
 				<div v-if="item.child" class="icondiv">
 					<transition name="fade">
-						<ul v-if="item.child" class="menuList-child" v-show="isHover"
+						<ul v-if="item.child" class="menuList-child" v-show="isHoverArr[index]"
 						    :style="{'background': backgroundColor,'color': textColor}">
 							<zz-nav-menu :navData="item.child"
 							             :backgroundColor="backgroundColor"
@@ -37,8 +37,8 @@ export default {
 	props: ["navData", "backgroundColor", "textColor", "activeTextColor", "defaultActive", "mode"],
 	data() {
 		return {
-			isHover: false,
-			isactive: ''
+			isactive: '',
+			isHoverArr:[]
 		};
 	},
 	methods: {
@@ -49,30 +49,32 @@ export default {
 			this.isactive = index;
 			if (this.mode == "vertical") {
 				if (item.child) {
-					this.isHover = !this.isHover;
+					this.$set(this.isHoverArr,index,!this.isHoverArr[index]);
 				}
 			}
 		},
-		show(item) {
+		show(item,index) {
 			if (this.mode !== "vertical") {
 				if (item.disabled) {
-					this.isHover = false;
+					this.$set(this.isHoverArr,index,false);
 					return false;
 				}
 				if (item.child) {
-					this.isHover = true;
+					this.$set(this.isHoverArr,index,true);
 				}
 			}
 		},
-		hide() {
+		hide(index) {
 			if (this.mode !== "vertical") {
-				this.isHover = false;
+				this.$set(this.isHoverArr,index,false);
 			}
 		}
 	},
 	created: function() {
 		this.isactive = this.defaultActive;
-		// console.log(this.navData);
+		this.isHoverArr = this.navData.map(()=>{
+			return false;
+		})
 	}
 };
 </script>
@@ -229,7 +231,7 @@ export default {
 }
 
 .zz-nav-menu.vertical .zz-menu-demo .menuList .menuList-child .menuList {
-	padding-right: 0;    
+	padding-right: 0;
 	padding-left: 55px;
 }
 
