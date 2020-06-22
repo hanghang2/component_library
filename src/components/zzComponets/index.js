@@ -9,6 +9,7 @@ import zzInput from "./componets/zzInput";
 import zzSelect from "./componets/zzSelect";
 import zzCheckbox from "./componets/zzCheckbox";
 import zzCascader from "./componets/zzCascader";
+import zzCascaderChild from "./componets/zzCascader-child";
 import zzDatePicker from "./componets/zzDatePicker";
 import zzTransfer from "./componets/zzTransfer";
 import zzTabs from "./componets/zzTabs";
@@ -31,6 +32,7 @@ export default {
 		Vue.component("zzSelect", zzSelect);
 		Vue.component("zzCheckbox", zzCheckbox);
 		Vue.component("zzCascader", zzCascader);
+		Vue.component("zzCascaderChild", zzCascaderChild);
 		Vue.component("zzDatePicker", zzDatePicker);
 		Vue.component("zzTransfer", zzTransfer);
 		Vue.component("zzTabs", zzTabs);

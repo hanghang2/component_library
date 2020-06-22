@@ -34,7 +34,8 @@ img {
 #app #nav {
     height: 100%;
     width: 100%;
-    display: flex;padding: 40px 0 0;
+	display: flex;
+	/* padding: 40px 0 0; */
 }
 #nav .main_left {
     flex: 0 0 20%;
