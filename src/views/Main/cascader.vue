@@ -60,7 +60,6 @@ export default {
 	methods: {
 		getval(val) {
 			this.value = val;
-			console.log(this.value);
 		}
 	}
 };

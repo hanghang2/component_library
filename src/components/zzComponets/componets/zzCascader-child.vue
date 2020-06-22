@@ -10,35 +10,30 @@
 			<span v-show="item.children" class="zl-cascader_icon">
 				<img class="zl-input__clear" src="@/assets/jiantouLeft.png" />
 			</span>
-			<div class="listSun">
-				<zzCascaderChild :data="item.children"></zzCascaderChild>
-			</div>
 		</li>
+		<div class="listSun">
+			<zzCascaderChild v-for="(item,index) in nextdata" :data="nextdata"></zzCascaderChild>
+		</div>
 	</div>
 </template>
 <script>
 export default {
-	inject: ['props'],
-	props: {
-		data: {
-			type: Array ,
-			default: () => {}
-		}
-	},
+	props: ['data'],
 	data() {
 		return {
 			FirstactiveIndex: null,
+			nextdata: [],
 		};
 	},
 	methods: {
 		FirstClick(index, name, value, children) {
 			this.FirstactiveIndex = index;
 			this.FirstValue = value;
+			this.nextdata = children
 		},
 	},
 	mounted(){
-		console.log(this.data)
-		console.log(this.props)
+		
 	}
 };
 </script>
@@ -112,5 +107,16 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.listSun {
+	position: absolute;
+    left: 200px;
+    top: 0;
+	padding: 6px 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: 1px solid #e4e7ed;
+	border-radius: 5px;
+	max-height: 200px;
 }
 </style>

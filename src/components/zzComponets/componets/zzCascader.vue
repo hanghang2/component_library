@@ -52,19 +52,6 @@ export default {
 			type: Array,
 			default: () => []
 		},
-		props: {
-			type: Object,
-			default: () => ({
-				children: "children",
-				name: "name",
-				value: "value",
-			})
-		},
-	},
-	provide() {//数据共享给子组件
-		return {
-			props: this.props,
-		};
 	},
 	data() {
 		return {
@@ -205,14 +192,12 @@ export default {
 	box-sizing: border-box;
 	border: 1px solid #e4e7ed;
 	/* min-width: 200px; */
-	border: 1px solid #ccc;
 	top: 50px;
 	left: 0px;
 	border-radius: 5px;
-	box-shadow: 2px 2px 10px 1px #eaeaea;
 	z-index: 111;
-	height: 200px;
-	overflow-y: auto;
+	max-height: 200px;
+	/* overflow-y: auto; */
 }
 .zlCascader .cascader_list::before {
 	content: "";
