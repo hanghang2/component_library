@@ -22,7 +22,6 @@
 <script>
 export default {
 	props: {},
-	name: "zzcarousel",
 	data() {
 		return {
 			lefts: [],
@@ -36,7 +35,6 @@ export default {
 		//初始化
 		init() {
             let num = this.$refs.zzcarousel.children.length;
-            console.log(this.$refs.zzcarousel.children)
 			for (let i = 0; i < num; i++) {
 				if (i + 1 == num) {
 					this.lefts.push("-100%");
@@ -173,17 +171,17 @@ export default {
 .zz-carousel-prev {
 	background: rgba(31, 45, 61, 0.3);
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	position: absolute;
 	z-index: 999;
-	top: calc(50% - 25px);
+	top: calc(50% - 20px);
 	opacity: 0.5;
 	color: #fff;
 	font-size: 20px;
 	text-align: center;
 	border-radius: 50%;
-	line-height: 50px;
+	line-height: 40px;
 	cursor: pointer;
 }
 .zz-carousel-next:hover,
