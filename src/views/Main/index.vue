@@ -64,6 +64,9 @@
 			<li class="nav-list">
 				<router-link to="/zzDialog">dialog 弹框</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzCarousel">carousel 走马灯</router-link>
+			</li>
 		</div>
 		<div class="main_body">
 			<router-view></router-view>

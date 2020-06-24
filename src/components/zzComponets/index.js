@@ -16,6 +16,7 @@ import zzTabs from "./componets/zzTabs";
 import zzSlider from "./componets/zzSlider";
 import zzNavMenu from "./componets/zzNavMenu";
 import zzDialog from "./componets/zzDialog";
+import zzCarousel from "./componets/zzCarousel";
 
 
 //导出单个组件
@@ -40,6 +41,7 @@ export default {
 		Vue.component("zzSlider", zzSlider);
 		Vue.component("zzNavMenu", zzNavMenu);
 		Vue.component("zzDialog", zzDialog);
+		Vue.component("zzCarousel", zzCarousel);
 	}
 };
 

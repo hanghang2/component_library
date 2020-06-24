@@ -78,6 +78,10 @@ const routes = [
 				path: "/zzDialog",
 				name: "zzDialog",
 				component: () => import("../views/Main/dialog.vue")
+			},{
+				path: "/zzCarousel",
+				name: "zzCarousel",
+				component: () => import("../views/Main/carousel.vue")
 			},
 		]
 	}
