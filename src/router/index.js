@@ -82,6 +82,10 @@ const routes = [
 				path: "/zzCarousel",
 				name: "zzCarousel",
 				component: () => import("../views/Main/carousel.vue")
+			},{
+				path: "/zzAlert",
+				name: "zzAlert",
+				component: () => import("../views/Main/alert.vue")
 			},
 		]
 	}

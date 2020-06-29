@@ -1,5 +1,5 @@
 <template>
-	<div class="zz-carousel" @mouseenter="enter()" @mouseleave="leave()">
+	<div class="zz-carousel" @mouseenter="enter()" @mouseleave="leave()" :style="{height: height}">
 		<span class="zz-carousel-prev" @click="prev()" v-show="!t">
 			<img src="@/assets/jiantouRight2.png">
 		</span>
@@ -12,7 +12,7 @@
 			<img src="@/assets/jiantouLeft2.png">
 		</span>
 		<div class="zz-carousel-nav">
-			<div v-for="(item,index) in lefts" @click="active(index)">
+			<div v-for="(item,index) in lefts" :key="index" @click="active(index)">
 				<span v-bind:class="{'active':(item == '000%')}"></span>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-	props: {},
+	props: ["height", "autoplay", "interval"],
 	data() {
 		return {
 			lefts: [],
@@ -34,7 +34,7 @@ export default {
 	methods: {
 		//初始化
 		init() {
-            let num = this.$refs.zzcarousel.children.length;
+			let num = this.$refs.zzcarousel.children.length;
 			for (let i = 0; i < num; i++) {
 				if (i + 1 == num) {
 					this.lefts.push("-100%");
@@ -116,13 +116,23 @@ export default {
 		this.init();
 		this.domupdateStyle();
 		var _this = this;
-		window.setInterval(function() {
-			if (_this.t) {
-				_this.next();
-			}
-		}, 2000);
+		let interval = 2000;
+		if (!this.interval) {
+			interval = 2000;
+		} else {
+			interval = this.interval;
+		}
+		if (!_this.autoplay) {
+			this.timer = window.setInterval(function() {
+				if (_this.t) {
+					_this.next();
+				}
+			}, interval);
+		}
 	},
-	created: function() {}
+	beforeDestroy: function() {
+		clearInterval(this.timer);
+	}
 };
 </script>
 

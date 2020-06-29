@@ -1,13 +1,51 @@
 <template>
 	<div class="carousel">
 		<p>基础用法</p>
-		<div class="list" style="height: 300px;width: 550px;">
-			<zz-carousel>
-				<div class="item-banner" v-for="(item,index) in bannerdata">
+		<div class="list">
+			<zz-carousel height="200px">
+				<div class="item-banner" v-for="(item,index) in bannerdata" :key="index">
 					{{index + 1}}
 				</div>
 			</zz-carousel>
 		</div>
+		<p>是否自动切换</p>
+		<div class="list">
+			<zz-carousel height="200px" autoplay="false">
+				<div class="item-banner" v-for="(item,index) in bannerdata" :key="index">
+					{{index + 1}}
+				</div>
+			</zz-carousel>
+			<br />
+			<div class="demo-contain">
+				<p>设置<code>autoplay</code>为<code>false</code>取消走马灯自动切换。</p>
+			</div>
+		</div>
+		<p>自动切换时间间隔</p>
+		<div class="list">
+			<zz-carousel height="200px" interval="3000">
+				<div class="item-banner" v-for="(item,index) in bannerdata" :key="index">
+					{{index + 1}}
+				</div>
+			</zz-carousel>
+			<br />
+			<div class="demo-contain">
+				<p>设置<code>interval</code>自动切换的时间间隔，单位为毫秒。</p>
+			</div>
+		</div>
+		
+		<p>属性</p>
+		<table class="table_show">
+			<thead>
+				<tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr>
+			</thead>
+			<tbody>
+                <tr><td>height</td><td>走马灯的高度</td><td>string</td><td>—</td><td>—</td></tr>
+                <tr><td>autoplay</td><td>是否自动切换</td><td>boolean</td><td>—</td><td>true</td></tr>
+                <tr><td>interval</td><td>自动切换的时间间隔，单位为毫秒</td><td>number</td><td>—</td><td>2000</td></tr>
+			</tbody>
+		</table>
+		<p>详细文档链接</p>
+		<a href="http://note.youdao.com/groupshare/?token=FC3CD44595D74003A078C9AA771BD91A&gid=116249960" target="_blank">http://note.youdao.com/groupshare/?token=FC3CD44595D74003A078C9AA771BD91A&gid=116249960</a>
 	</div>
 </template>
 
