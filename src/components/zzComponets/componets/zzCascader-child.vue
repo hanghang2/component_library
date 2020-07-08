@@ -1,12 +1,11 @@
 <template>
-	<div class="">
-		<li
-			v-for="(item,index) in data"
+	<div class>
+		<li v-for="(item,index) in data"
 			:key="index"
 			v-bind:class="{activeLi:FirstactiveIndex == index}"
 			@click="FirstClick(index,item.name,item.value,item.children)"
 		>
-			{{ item.name}}
+			{{ item.name }}
 			<span v-show="item.children" class="zl-cascader_icon">
 				<img class="zl-input__clear" src="@/assets/jiantouLeft.png" />
 			</span>
@@ -18,23 +17,25 @@
 </template>
 <script>
 export default {
-	props: ['data'],
+	props: ["data"],
 	data() {
 		return {
 			FirstactiveIndex: null,
 			nextdata: [],
+			inputval: ""
 		};
 	},
 	methods: {
 		FirstClick(index, name, value, children) {
 			this.FirstactiveIndex = index;
 			this.FirstValue = value;
-			this.nextdata = children
-		},
+			this.nextdata = children;
+			this.inputval = name;
+
+			console.log(this.inputval);
+		}
 	},
-	mounted(){
-		
-	}
+	mounted() {}
 };
 </script>
 <style scoped>
@@ -48,14 +49,11 @@ export default {
 	box-sizing: border-box;
 	border: 1px solid #e4e7ed;
 	/* min-width: 200px; */
-	border: 1px solid #ccc;
 	top: 50px;
 	left: 0px;
 	border-radius: 5px;
-	box-shadow: 2px 2px 10px 1px #eaeaea;
 	z-index: 111;
-	height: 200px;
-	overflow-y: auto;
+	max-height: 200px;
 }
 .cascader_list::before {
 	content: "";
@@ -110,8 +108,8 @@ export default {
 }
 .listSun {
 	position: absolute;
-    left: 200px;
-    top: 0;
+	left: 200px;
+	top: 0;
 	padding: 6px 0;
 	margin: 0;
 	box-sizing: border-box;

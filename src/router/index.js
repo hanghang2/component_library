@@ -74,6 +74,18 @@ const routes = [
 				path: "/zzNavMenu",
 				name: "zzNavMenu",
 				component: () => import("../views/Main/NavMenu.vue")
+			},{
+				path: "/zzDialog",
+				name: "zzDialog",
+				component: () => import("../views/Main/dialog.vue")
+			},{
+				path: "/zzCarousel",
+				name: "zzCarousel",
+				component: () => import("../views/Main/carousel.vue")
+			},{
+				path: "/zzAlert",
+				name: "zzAlert",
+				component: () => import("../views/Main/alert.vue")
 			},
 		]
 	}

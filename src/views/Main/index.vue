@@ -56,10 +56,19 @@
 				<router-link to="/zzTabs">tabs标签页</router-link>
 			</li>
 			<li class="nav-list nav-basic">
-				<a>提示</a>
+				<a>其它</a>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzAlert">alert 警告</router-link>
 			</li>
 			<li class="nav-list">
 				<router-link to="/zzLoading">loading 加载</router-link>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzDialog">dialog 弹框</router-link>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzCarousel">carousel 走马灯</router-link>
 			</li>
 		</div>
 		<div class="main_body">
