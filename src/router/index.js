@@ -86,6 +86,10 @@ const routes = [
 				path: "/zzAlert",
 				name: "zzAlert",
 				component: () => import("../views/Main/alert.vue")
+			},{
+				path: "/zzTooltip",
+				name: "zzTooltip",
+				component: () => import("../views/Main/tooltip.vue")
 			},
 		]
 	}

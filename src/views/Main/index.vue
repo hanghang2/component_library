@@ -65,6 +65,9 @@
 				<router-link to="/zzLoading">loading 加载</router-link>
 			</li>
 			<li class="nav-list">
+				<router-link to="/zzTooltip">tooltip 文字提示</router-link>
+			</li>
+			<li class="nav-list">
 				<router-link to="/zzDialog">dialog 弹框</router-link>
 			</li>
 			<li class="nav-list">

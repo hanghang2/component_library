@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-	props: ["type", "plain", "round","disabled"],
+	props: ["type", "plain", "round", "disabled"],
 	name: "zlButton",
 	data() {
 		return {
@@ -16,11 +16,11 @@ export default {
 			isplain: "",
 			isround: "",
 			iscircle: "",
-			isdisabled: '',
+			isdisabled: ""
 		};
 	},
-	methods:{
-		getDisabled(){
+	methods: {
+		getDisabled() {
 			if (this.disabled === "" || this.disabled) {
 				this.isdisabled = "zlButton-isdisabled ";
 			} else {
@@ -70,16 +70,19 @@ export default {
 	border-color: #c6e2ff;
 	background-color: #ecf5ff;
 }
+.zlButton:active {
+	border-color: #0170fe;
+}
 
 .zlButton.zlButton-isround {
 	border-radius: 20px;
 }
 .zlButton.zlButton-isdisabled {
 	color: #c0c4cc;
-    cursor: not-allowed;
-    background-image: none;
-    background-color: #fff;
-    border-color: #ebeef5;
+	cursor: not-allowed;
+	background-image: none;
+	background-color: #fff;
+	border-color: #ebeef5;
 }
 .zlButton.zlButton-isdisabled:hover {
 	opacity: 1;
@@ -95,7 +98,11 @@ export default {
 	color: #fff;
 	background-color: #0170fe;
 	border-color: #0170fe;
-	opacity: .8;
+	opacity: 0.8;
+}
+.zlButton-primary:active {
+	background: #3a8ee6;
+	border-color: #3a8ee6;
 }
 
 .zlButton-primary.zlButton-isplain {
@@ -103,15 +110,18 @@ export default {
 	background: #ecf5ff;
 	border-color: #b3d8ff;
 }
+.zlButton-primary.zlButton-isplain:active {
+	border-color: #0170fe;
+}
 .zlButton-primary.zlButton-isdisabled {
 	color: #fff;
-    background-color: #a0cfff;
-    border-color: #a0cfff;
+	background-color: #a0cfff;
+	border-color: #a0cfff;
 }
 .zlButton-primary.zlButton-isplain.zlButton-isdisabled {
 	color: #8cc5ff;
-    background-color: #ecf5ff;
-    border-color: #d9ecff;
+	background-color: #ecf5ff;
+	border-color: #d9ecff;
 }
 
 .zlButton-success {
@@ -124,23 +134,30 @@ export default {
 	color: #fff;
 	background-color: #67c23a;
 	border-color: #67c23a;
-	opacity: .8;
+	opacity: 0.8;
 }
 
+.zlButton-success:active {
+	background: #5daf34;
+	border-color: #5daf34;
+}
 .zlButton-success.zlButton-isplain {
 	color: #67c23a;
 	background: #f0f9eb;
 	border-color: #c2e7b0;
 }
+.zlButton-success.zlButton-isplain:active {
+	border-color: #67c23a;
+}
 .zlButton-success.zlButton-isdisabled {
 	color: #fff;
-    background-color: #b3e19d;
-    border-color: #b3e19d;
+	background-color: #b3e19d;
+	border-color: #b3e19d;
 }
 .zlButton-success.zlButton-isplain.zlButton-isdisabled {
 	color: #a4da89;
-    background-color: #f0f9eb;
-    border-color: #e1f3d8;
+	background-color: #f0f9eb;
+	border-color: #e1f3d8;
 }
 
 .zlButton-info {
@@ -153,7 +170,11 @@ export default {
 	color: #fff;
 	background-color: #909399;
 	border-color: #909399;
-	opacity: .8;
+	opacity: 0.8;
+}
+.zlButton-info:active {
+	background: #82848a;
+	border-color: #82848a;
 }
 
 .zlButton-info.zlButton-isplain {
@@ -161,15 +182,18 @@ export default {
 	background: #f4f4f5;
 	border-color: #d3d4d6;
 }
+.zlButton-info.zlButton-isplain:active {
+	border-color: #909399;
+}
 .zlButton-info.zlButton-isdisabled {
 	color: #fff;
 	background-color: #c8c9cc;
-    border-color: #c8c9cc;
+	border-color: #c8c9cc;
 }
 .zlButton-info.zlButton-isplain.zlButton-isdisabled {
 	color: #bcbec2;
-    background-color: #f4f4f5;
-    border-color: #e9e9eb;
+	background-color: #f4f4f5;
+	border-color: #e9e9eb;
 }
 
 .zlButton-warning {
@@ -182,23 +206,30 @@ export default {
 	color: #fff;
 	background-color: #e6a23c;
 	border-color: #e6a23c;
-	opacity: .8;
+	opacity: 0.8;
 }
 
+.zlButton-warning:active {
+	background: #cf9236;
+	border-color: #cf9236;
+}
 .zlButton-warning.zlButton-isplain {
 	color: #e6a23c;
 	background: #fdf6ec;
 	border-color: #f5dab1;
 }
+.zlButton-warning.zlButton-isplain:active {
+	border-color: #e6a23c;
+}
 .zlButton-warning.zlButton-isplain.zlButton-isdisabled {
 	color: #f0c78a;
-    background-color: #fdf6ec;
-    border-color: #faecd8;
+	background-color: #fdf6ec;
+	border-color: #faecd8;
 }
 .zlButton-warning.zlButton-isdisabled {
 	color: #fff;
 	background-color: #f3d19e;
-    border-color: #f3d19e;
+	border-color: #f3d19e;
 }
 
 .zlButton-danger {
@@ -211,7 +242,11 @@ export default {
 	color: #fff;
 	background-color: #f56c6c;
 	border-color: #f56c6c;
-	opacity: .8;
+	opacity: 0.8;
+}
+.zlButton-danger:active {
+	background: #dd6161;
+	border-color: #dd6161;
 }
 
 .zlButton-danger.zlButton-isplain {
@@ -219,14 +254,17 @@ export default {
 	background: #fef0f0;
 	border-color: #fbc4c4;
 }
+.zlButton-danger.zlButton-isplain:active {
+	border-color: #f56c6c;
+}
 .zlButton-danger.zlButton-isplain.zlButton-isdisabled {
 	color: #f9a7a7;
-    background-color: #fef0f0;
-    border-color: #fde2e2;
+	background-color: #fef0f0;
+	border-color: #fde2e2;
 }
 .zlButton-danger.zlButton-isdisabled {
 	color: #fff;
 	background-color: #fab6b6;
-    border-color: #fab6b6;
+	border-color: #fab6b6;
 }
 </style>
