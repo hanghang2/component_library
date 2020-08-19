@@ -21,6 +21,8 @@ export default {
     data(){
         return {
             sourceData: {
+                // startDate: String(new Date().getFullYear()) + '-' + new Date().getMonth() + 1 + '-01',
+                // endDate: String(new Date().getFullYear()) + '-' + new Date().getMonth() + 1 + '-31',
                 startDate: '2020-01-01',
                 endDate: '2020-01-31',
                 data: [{
