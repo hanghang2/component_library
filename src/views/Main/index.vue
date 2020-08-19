@@ -45,6 +45,9 @@
 			<li class="nav-list">
 				<router-link to="/zzTree">tree树</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzGanttChart">ganttChart甘特图</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>导航</a>

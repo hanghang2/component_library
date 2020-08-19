@@ -90,6 +90,10 @@ const routes = [
 				path: "/zzTooltip",
 				name: "zzTooltip",
 				component: () => import("../views/Main/tooltip.vue")
+			},,{
+				path: "/zzGanttChart",
+				name: "zzGanttChart",
+				component: () => import("../views/Main/ganttChart.vue")
 			},
 		]
 	}

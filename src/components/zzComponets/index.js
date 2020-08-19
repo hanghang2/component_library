@@ -19,6 +19,7 @@ import zzDialog from "./componets/zzDialog";
 import zzCarousel from "./componets/zzCarousel";
 import zzAlert from "./componets/zzAlert";
 import zzTooltip from "./componets/zzTooltip";
+import zzGanttChart from "./componets/zzGanttChart";
 
 
 //导出单个组件
@@ -46,6 +47,7 @@ export default {
 		Vue.component("zzCarousel", zzCarousel);
 		Vue.component("zzAlert", zzAlert);
 		Vue.component("zzTooltip", zzTooltip);
+		Vue.component("zzGanttChart", zzGanttChart);
 	}
 };
 
