@@ -45,6 +45,9 @@
 			<li class="nav-list">
 				<router-link to="/zzTree">tree树</router-link>
 			</li>
+			<li class="nav-list">
+				<router-link to="/zzGanttChart">ganttChart甘特图</router-link>
+			</li>
 
 			<li class="nav-list nav-basic">
 				<a>导航</a>
@@ -63,6 +66,9 @@
 			</li>
 			<li class="nav-list">
 				<router-link to="/zzLoading">loading 加载</router-link>
+			</li>
+			<li class="nav-list">
+				<router-link to="/zzTooltip">tooltip 文字提示</router-link>
 			</li>
 			<li class="nav-list">
 				<router-link to="/zzDialog">dialog 弹框</router-link>
